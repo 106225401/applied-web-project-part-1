@@ -19,7 +19,7 @@
         <header>
             <h1>Job Application Page</h1>
             <a href="#application-form">Apply Now</a>
-            
+
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -29,23 +29,19 @@
                 </ul>
             </nav>
         </header>
-        
+
         <hr>
         
         <main>
-            <br>
-
             <form id="application-form" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
                 <h2>Application Form</h2>
-                
+
                 <label for="jobref">Job Reference Number:</label>
                 <input type="text" id="jobref" name="jobref"
                     pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
                     title="Format: exactly 5 alphanumeric characters"
                     required>
-                
-                <br><br>
-                
+
                 <fieldset>
                     <legend>Personal Information</legend>
 
@@ -55,16 +51,12 @@
                             title="Format: max 20 alpha characters"
                         required>
                     
-                    <br>
-
                     <label for="lname">Last Name:</label>
                     <input type="text" id="lname" name="lname"
                         pattern="[A-Za-z ]{1,20}" maxlength="20"
                         title="Format: max 20 alpha characters"
                         required>
                     
-                    <br>
-
                     <label for="dob">Date of Birth:</label>
                     <input type="text" id="dob" name="dob"
                         placeholder="dd/mm/yyyy"
@@ -72,8 +64,6 @@
                         title="Format: dd/mm/yyyy"
                         required>
                 </fieldset>
-
-                <br>
 
                 <fieldset>
                     <legend>Gender</legend>
@@ -85,8 +75,6 @@
                     <label for="female">Female</label>
                 </fieldset>
                 
-                <br>
-
                 <fieldset>
                     <legend>Address</legend>
 
@@ -96,15 +84,11 @@
                         title="Format: max 40 characters"
                         required>
 
-                    <br>
-
                     <label for="suburb">Suburb/Town</label>
                     <input type="text" id="suburb" name="suburb"
                         maxlength="40"
                         title="Format: max 40 characters"
                         required>
-
-                    <br>
 
                     <label for="state">State</label>
                     <select id="state" name="state"
@@ -121,16 +105,12 @@
                         <option value="ACT">ACT</option>
                     </select>
 
-                    <br>
-
                     <label for="postcode">Postcode</label>
                     <input type="text" id="postcode" name="postcode"
                         pattern="\d{4}"
                         title="Format: exactly 4 digits"
                         required>
                 </fieldset>
-
-                <br>
 
                 <fieldset>
                     <legend>Contact</legend>
@@ -140,16 +120,12 @@
                         title="Format: valid email"
                         required>
 
-                    <br>
-
                     <label for="phone">Phone Number</label>
                     <input type="text" id="phone" name="phone"
                         pattern="\d{8,12}"
                         title="Format: 8-12 digits"
                         required>
                 </fieldset>
-
-                <br>
 
                 <fieldset>
                     <legend>Skills</legend>
@@ -169,15 +145,13 @@
                     <input type="checkbox" id="other" name="skill[]" value="other">
                     <label for="other">Other skills...</label>
 
-                    <br><br>
-                    
-                    <label for="others">Other Skills:</label><br>
+                    <label for="others">Other Skills:</label>
                     <textarea id="others" name="others"
                         placeholder="Write your other skills here..."
                         rows="5" cols="50"></textarea>
                 </fieldset>
 
-                <br><hr>
+                <hr>
 
                 <button type="submit">Apply</button>
                 <button type="reset">Reset Form</button>
