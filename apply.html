@@ -19,9 +19,6 @@
         <style>
             .skip-link { position: absolute; top: -100px; }
             .skip-link:focus { top: 0; }
-
-            button[type="submit"] { background-color: #622EFF; color: white; }
-            button[type="reset"] { background-color: #D3D3D3; color: black; }
         </style>
     </head>
 
@@ -43,23 +40,23 @@
                 </ul>
             </nav>
         </header>
-        
+
         <hr>
-        
-        <main id="main" aria-label="Job application form">
+
+        <main id="main">
             <form id="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
                 <h2>Application Form</h2>
 
                 <!-- Position selection section -->
                 <section id="job" class="form-section">
                     <h3>Position to Apply For</h3>
-                    
+
                     <label for="jobref">Job Reference Number:</label>
                     <input type="text" id="jobref" name="jobref"
                         pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
                         aria-describedby="jobhelp"
                         required>
-                    
+
                     <div id="jobhelp" style="color: #555555;">
                         <p>Available positions:</p>
                         <ul>
@@ -69,7 +66,7 @@
                         </ul>
                     </div>
                 </section>
-                
+
                 <!-- Personal details section -->
                 <section id="personal-info" class="form-section">
                     <h3>Personal Information</h3>
@@ -83,14 +80,14 @@
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
                             required>
-                        
+
                         <label for="lname">Last Name:</label>
                         <input type="text" id="lname" name="lname"
                             autocomplete="family-name"
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
                             required>
-                        
+
                         <label for="dob">Date of Birth:</label>
                         <input type="text" id="dob" name="dob"
                             autocomplete="bday"
@@ -114,11 +111,11 @@
                         </label>
                     </fieldset>
                 </section>
-                
+
                 <!-- Address details section -->
                 <section id="address" class="form-section">
                     <h3>Address</h3>
-                
+
                     <fieldset>
                         <legend>Address</legend>
 
@@ -164,7 +161,7 @@
                 <!-- Contact details section -->
                 <section id="contact" class="form-section">
                     <h3>Contact</h3>
-                    
+
                     <fieldset>
                         <legend>Contact</legend>
 
@@ -189,7 +186,7 @@
 
                     <fieldset>
                         <legend>Skills</legend>
-                        
+
                         <label>
                             <input type="checkbox" name="skill[]" value="python">
                             Python
@@ -199,7 +196,7 @@
                             <input type="checkbox" name="skill[]" value="html">
                             HTML
                         </label>
-                        
+
                         <label>
                             <input type="checkbox" name="skill[]" value="javascript">
                             JavaScript
@@ -234,9 +231,9 @@
                 <button type="reset">Reset Form</button>
             </form>
         </main>
-        
+
         <hr>
-        
+
         <footer>
             <!-- Project Links-->
             <h4>Project</h4>
