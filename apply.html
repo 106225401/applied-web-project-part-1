@@ -82,11 +82,15 @@
                 <fieldset>
                     <legend>Gender</legend>
 
-                    <input type="radio" id="male" name="gender" value="M" required>
-                    <label for="male">Male</label>
+                    <label>
+                        <input type="radio" name="gender" value="M" required>
+                        Male
+                    </label>
 
-                    <input type="radio" id="female" name="gender" value="F">
-                    <label for="female">Female</label>
+                    <label>
+                        <input type="radio" name="gender" value="F">
+                        Female
+                    </label>
                 </fieldset>
                 
                 <fieldset>
@@ -149,21 +153,36 @@
 
                 <fieldset>
                     <legend>Skills</legend>
+                    
+                    <label>
+                        <input type="checkbox" name="skill[]" value="python">
+                        Python
+                    </label>
 
-                    <input type="checkbox" id="python" name="skill[]" value="python">
-                    <label for="python">Python</label>
+                    <label>
+                        <input type="checkbox" name="skill[]" value="html">
+                        HTML
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="skill[]" value="javascript">
+                        JavaScript
+                    </label>
 
-                    <input type="checkbox" id="html" name="skill[]" value="html">
-                    <label for="html">HTML</label>  
+                    <label>
+                        <input type="checkbox" name="skill[]" value="mysql">
+                        MySQL
+                    </label>
 
-                    <input type="checkbox" id="javascript" name="skill[]" value="javascript">
-                    <label for="javascript">JavaScript</label>
+                    <label>
+                        <input type="checkbox" name="skill[]" value="excel">
+                        Excel
+                    </label>
 
-                    <input type="checkbox" id="sql" name="skill[]" value="mysql">
-                    <label for="sql">MySQL</label>
-
-                    <input type="checkbox" id="other" name="skill[]" value="other">
-                    <label for="other">Other skills...</label>
+                    <label>
+                        <input type="checkbox" name="skill[]" value="other">
+                        Other skills...
+                    </label>
 
                     <label for="others">Other Skills:</label>
                     <textarea id="others" name="others"
