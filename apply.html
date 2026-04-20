@@ -38,157 +38,177 @@
             <form id="application-form" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
                 <h2>Application Form</h2>
 
-                <label for="jobref">Job Reference Number:</label>
-                <input type="text" id="jobref" name="jobref"
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
-                    aria-describedby="jobhelp"
-                    required>
+                <section id="job" class="form-section">
+                    <h3>Position to Apply For</h3>
+                    
+                    <label for="jobref">Job Reference Number:</label>
+                    <input type="text" id="jobref" name="jobref"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
+                        aria-describedby="jobhelp"
+                        required>
+                    
+                    <div id="jobhelp" style="color: #555555;">
+                        <p>Available positions:</p>
+                        <ul>
+                            <li>DLR01 - Digital Learning Support Officer</li>
+                            <li>LMS02 - Learning Management System (LMS) Administrator</li>
+                            <li>RES03 - Research Technology Assistant</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="personal-info" class="form-section">
+                    <h3>Personal Information</h3>
+
+                    <fieldset>
+                        <legend>Personal Information</legend>
+
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname"
+                            autocomplete="given-name"
+                            pattern="[A-Za-z ]{1,20}" maxlength="20"
+                            title="Format: max 20 alpha characters"
+                            required>
+                        
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname"
+                            autocomplete="family-name"
+                            pattern="[A-Za-z ]{1,20}" maxlength="20"
+                            title="Format: max 20 alpha characters"
+                            required>
+                        
+                        <label for="dob">Date of Birth:</label>
+                        <input type="text" id="dob" name="dob"
+                            autocomplete="bday"
+                            placeholder="dd/mm/yyyy"
+                            pattern="(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/\d{4}"
+                            title="Format: dd/mm/yyyy"
+                            required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Gender</legend>
+
+                        <label>
+                            <input type="radio" name="gender" value="M" required>
+                            Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="F">
+                            Female
+                        </label>
+                    </fieldset>
+                </section>
                 
-                <div id="jobhelp" style="color: #555555;">
-                    <p>Available positions:</p>
-                    <ul>
-                        <li>DLR01 - Digital Learning Support Officer</li>
-                        <li>LMS02 - Learning Management System (LMS) Administrator</li>
-                        <li>RES03 - Research Technology Assistant</li>
-                    </ul>
-                </div>
-
-                <fieldset>
-                    <legend>Personal Information</legend>
-
-                    <label for="fname">First Name:</label>
-                    <input type="text" id="fname" name="fname"
-                        autocomplete="given-name"
-                        pattern="[A-Za-z ]{1,20}" maxlength="20"
-                        title="Format: max 20 alpha characters"
-                        required>
-                    
-                    <label for="lname">Last Name:</label>
-                    <input type="text" id="lname" name="lname"
-                        autocomplete="family-name"
-                        pattern="[A-Za-z ]{1,20}" maxlength="20"
-                        title="Format: max 20 alpha characters"
-                        required>
-                    
-                    <label for="dob">Date of Birth:</label>
-                    <input type="text" id="dob" name="dob"
-                        autocomplete="bday"
-                        placeholder="dd/mm/yyyy"
-                        pattern="(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/\d{4}"
-                        title="Format: dd/mm/yyyy"
-                        required>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Gender</legend>
-
-                    <label>
-                        <input type="radio" name="gender" value="M" required>
-                        Male
-                    </label>
-
-                    <label>
-                        <input type="radio" name="gender" value="F">
-                        Female
-                    </label>
-                </fieldset>
+                <section id="address" class="form-section">
+                    <h3>Address</h3>
                 
-                <fieldset>
-                    <legend>Address</legend>
+                    <fieldset>
+                        <legend>Address</legend>
 
-                    <label for="street">Street Address</label>
-                    <input type="text" id="street" name="street"
-                        autocomplete="street-address"
-                        maxlength="40"
-                        title="Format: max 40 characters"
-                        required>
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" name="street"
+                            autocomplete="street-address"
+                            maxlength="40"
+                            title="Format: max 40 characters"
+                            required>
 
-                    <label for="suburb">Suburb/Town</label>
-                    <input type="text" id="suburb" name="suburb"
-                        autocomplete="address-level2"
-                        maxlength="40"
-                        title="Format: max 40 characters"
-                        required>
+                        <label for="suburb">Suburb/Town</label>
+                        <input type="text" id="suburb" name="suburb"
+                            autocomplete="address-level2"
+                            maxlength="40"
+                            title="Format: max 40 characters"
+                            required>
 
-                    <label for="state">State</label>
-                    <select id="state" name="state"
-                        autocomplete="address-level1"
-                        title="Select State"
-                        required>
-                        <option value="">-- Please Select --</option>
-                        <option value="VIC">VIC</option>
-                        <option value="NSW">NSW</option>
-                        <option value="QLD">QLD</option>
-                        <option value="NT">NT</option>
-                        <option value="WA">WA</option>
-                        <option value="SA">SA</option>
-                        <option value="TAS">TAS</option>
-                        <option value="ACT">ACT</option>
-                    </select>
+                        <label for="state">State</label>
+                        <select id="state" name="state"
+                            autocomplete="address-level1"
+                            title="Select State"
+                            required>
+                            <option value="">-- Please Select --</option>
+                            <option value="VIC">VIC</option>
+                            <option value="NSW">NSW</option>
+                            <option value="QLD">QLD</option>
+                            <option value="NT">NT</option>
+                            <option value="WA">WA</option>
+                            <option value="SA">SA</option>
+                            <option value="TAS">TAS</option>
+                            <option value="ACT">ACT</option>
+                        </select>
 
-                    <label for="postcode">Postcode</label>
-                    <input type="text" id="postcode" name="postcode"
-                        autocomplete="postal-code"
-                        pattern="\d{4}"
-                        title="Format: exactly 4 digits"
-                        required>
-                </fieldset>
+                        <label for="postcode">Postcode</label>
+                        <input type="text" id="postcode" name="postcode"
+                            autocomplete="postal-code"
+                            pattern="\d{4}"
+                            title="Format: exactly 4 digits"
+                            required>
+                    </fieldset>
+                </section>
 
-                <fieldset>
-                    <legend>Contact</legend>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                        autocomplete="email"                            
-                        title="Format: valid email"
-                        required>
-
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone"
-                        autocomplete="tel"
-                        pattern="\d{8,12}"
-                        title="Format: 8-12 digits"
-                        required>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Skills</legend>
+                <section id="contact" class="form-section">
+                    <h3>Contact</h3>
                     
-                    <label>
-                        <input type="checkbox" name="skill[]" value="python">
-                        Python
-                    </label>
+                    <fieldset>
+                        <legend>Contact</legend>
 
-                    <label>
-                        <input type="checkbox" name="skill[]" value="html">
-                        HTML
-                    </label>
-                    
-                    <label>
-                        <input type="checkbox" name="skill[]" value="javascript">
-                        JavaScript
-                    </label>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                            autocomplete="email"                            
+                            title="Format: valid email"
+                            required>
 
-                    <label>
-                        <input type="checkbox" name="skill[]" value="mysql">
-                        MySQL
-                    </label>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                            autocomplete="tel"
+                            pattern="\d{8,12}"
+                            title="Format: 8-12 digits"
+                            required>
+                    </fieldset>
+                </section>
 
-                    <label>
-                        <input type="checkbox" name="skill[]" value="excel">
-                        Excel
-                    </label>
+                <section id="skills" class="form-section">
+                    <h3>Skills</h3>
 
-                    <label>
-                        <input type="checkbox" name="skill[]" value="other">
-                        Other skills...
-                    </label>
+                    <fieldset>
+                        <legend>Skills</legend>
+                        
+                        <label>
+                            <input type="checkbox" name="skill[]" value="python">
+                            Python
+                        </label>
 
-                    <label for="others">Other Skills:</label>
-                    <textarea id="others" name="others"
-                        placeholder="Write your other skills here..."
-                        rows="5" cols="50"></textarea>
-                </fieldset>
+                        <label>
+                            <input type="checkbox" name="skill[]" value="html">
+                            HTML
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox" name="skill[]" value="javascript">
+                            JavaScript
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="skill[]" value="mysql">
+                            MySQL
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="skill[]" value="excel">
+                            Excel
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="skill[]" value="other">
+                            Other skills...
+                        </label>
+
+                        <label for="others">Other Skills:</label>
+                        <textarea id="others" name="others"
+                            placeholder="Write your other skills here..."
+                            rows="5" cols="50"></textarea>
+                    </fieldset>
+                </section>
 
                 <hr>
 
