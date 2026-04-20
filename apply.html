@@ -41,8 +41,17 @@
                 <label for="jobref">Job Reference Number:</label>
                 <input type="text" id="jobref" name="jobref"
                     pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
-                    title="Format: exactly 5 alphanumeric characters"
+                    aria-describedby="jobhelp"
                     required>
+                
+                <div id="jobhelp" style="color: #555555;">
+                    <p>Available positions:</p>
+                    <ul>
+                        <li>DLR01 - Digital Learning Support Officer</li>
+                        <li>LMS02 - Learning Management System (LMS) Administrator</li>
+                        <li>RES03 - Research Technology Assistant</li>
+                    </ul>
+                </div>
 
                 <fieldset>
                     <legend>Personal Information</legend>
