@@ -64,7 +64,7 @@
 
                     <label for="jobref">Job Reference Number:</label>
                     <input type="text" id="jobref" name="jobref"
-                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5}$"
+                        pattern="^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{5}$"
                         aria-describedby="jobhelp"
                         required>
 
@@ -103,7 +103,7 @@
                         <input type="text" id="dob" name="dob"
                             autocomplete="bday"
                             placeholder="dd/mm/yyyy"
-                            pattern="(0[1-9]|[12]\d|3[01])/(0[1-9]|1[0-2])/\d{4}"
+                            pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
                             title="Format: dd/mm/yyyy"
                             required>
 
@@ -164,7 +164,7 @@
                         <label for="postcode">Postcode</label>
                         <input type="text" id="postcode" name="postcode"
                             autocomplete="postal-code"
-                            pattern="\d{4}"
+                            pattern="[0-9]{4}"
                             title="Format: exactly 4 digits"
                             required>
                     </fieldset>
@@ -186,7 +186,7 @@
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone"
                             autocomplete="tel"
-                            pattern="\d{8,12}"
+                            pattern="[0-9]{8,12}"
                             title="Format: 8-12 digits"
                             required>
                     </fieldset>
@@ -200,7 +200,7 @@
                         <legend>Skills</legend>
 
                         <label>
-                            <input type="checkbox" name="skill[]" value="python">
+                            <input type="checkbox" name="skill[]" value="python" required>
                             Python
                         </label>
 
