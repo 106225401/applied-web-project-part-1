@@ -107,21 +107,15 @@
 
                         <fieldset>
                             <legend>Gender</legend>
-                            
-                            <label>
-                                <input type="radio" name="gender" value="male" required>
-                                Male
-                            </label>
+                                    
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
 
-                            <label>
-                                <input type="radio" name="gender" value="female">
-                                Female
-                            </label>
-                            
-                            <label>
-                                <input type="radio" name="gender" value="prefer_not_to_say">
-                                Prefer not to say
-                            </label>
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label>
+
+                            <input type="radio" id="prefer_not_to_say" name="gender" value="prefer_not_to_say" required>
+                            <label for="prefer_not_to_say">Prefer not to say</label>
                         </fieldset>
                     </fieldset>
 
@@ -187,37 +181,25 @@
                     <fieldset>
                         <legend>Skills</legend>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="python" required>
-                            Python
-                        </label>
+                        <input type="checkbox" id="python" name="skill[]" value="python" required>
+                        <label for="python">Python</label>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="html">
-                            HTML
-                        </label>
+                        <input type="checkbox" id="html" name="skill[]" value="html" required>
+                        <label for="html">HTML</label>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="javascript">
-                            JavaScript
-                        </label>
+                        <input type="checkbox" id="javascript" name="skill[]" value="javascript" required>
+                        <label for="javascript">JavaScript</label>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="mysql">
-                            MySQL
-                        </label>
+                        <input type="checkbox" id="mysql" name="skill[]" value="mysql" required>
+                        <label for="mysql">MySQL</label>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="excel">
-                            Excel
-                        </label>
+                        <input type="checkbox" id="excel" name="skill[]" value="excel" required>
+                        <label for="excel">Excel</label>
 
-                        <label>
-                            <input type="checkbox" name="skill[]" value="other">
-                            Other skills…
-                        </label>
+                        <input type="checkbox" id="other" name="skill[]" value="other" required>
+                        <label for="other">Other skills…</label>
 
-                        <label for="others">Other Skills:</label>
+                        <label for="others">Other Skills</label>
                         <textarea id="others" name="others"
                             placeholder="Write your other skills here..."
                             rows="5" cols="50"></textarea>
