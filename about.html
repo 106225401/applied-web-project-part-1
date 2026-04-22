@@ -16,17 +16,19 @@
 
     <!-- Embedded CSS for UI Styling -->
     <style>
-        /* .skip-link { position: absolute; top: -100px; }
-        .skip-link:focus { top: 0; } */
+        .skip-link { position: absolute; top: -100px; }
+        .skip-link:focus { top: 0; }
     </style>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- header -->
     <header>
         <!-- Logo.png along with team name -->
         <div>
-            <img src="images/logo.png" alt="NextGen Devs logo" width="80" height="80">
+            <img src="images/logo.png" alt="NextGen Devs logo" style="width: 80px; height: 80px;">
             <span class="teamName">NextGen Devs</span>
         </div>
         
@@ -41,193 +43,180 @@
         </nav>
     </header>
 
-    <!-- Intro to our team -->
-    <section aria-labelledby="about-our-quote">
-        <!-- quote of our team -->
-        <blockquote>
-            <p id="about-our-quote">"Code, Create, Conquer"</p>
-            <cite>— NextGen Devs</cite>
-        </blockquote>
-
-        <!-- introductory paragraph to our team -->
-        <p>Meet our members behind <strong>NextGen Devs</strong>. We are a team of four passionate developers working together to build a website for a department seeking support in digital learning and research.</p>
-    </section>
-
-    <!-- Group Details -->
-    <section aria-labelledby="group-details-section">
-        <h1 id="group-details-section">Group Details</h1>
-
-        <ul>
-            <!-- Group Name -->
-            <li>
-                <strong>Group Name: </strong>NextGen Devs
-                <ul>
-                    <li>Department: Digital Learning &amp; Research support</li>
-                    <li>University: NextGen University</li>
-                </ul>
-            </li>
-
-            <!-- Class Scheule -->
-            <li>
-                <strong>Class Schedule: </strong> COS10026
-                <ul>
-                    <li>Tuesday: <em>Lecture Period</em></li>
+    <main id="main">
+        <!-- Intro to our team -->
+        <section aria-labelledby="about-our-quote">
+            <!-- quote of our team -->
+            <blockquote>
+                <p id="about-our-quote">"Code, Create, Conquer"</p>
+                <cite>— NextGen Devs</cite>
+            </blockquote>
+            <!-- introductory paragraph to our team -->
+            <p>Meet our members behind <strong>NextGen Devs</strong>. We are a team of four passionate developers working together to build a website for a department seeking support in digital learning and research.</p>
+        </section>
+        <!-- Group Details -->
+        <section aria-labelledby="group-details-section">
+            <h1 id="group-details-section">Group Details</h1>
+            <ul>
+                <!-- Group Name -->
+                <li>
+                    <strong>Group Name: </strong>NextGen Devs
                     <ul>
-                        <li>2:00 - 4:00 p.m.</li>
-                        <li>Block A-level 8-LH4</li>
+                        <li>Department: Digital Learning &amp; Research support</li>
+                        <li>University: NextGen University</li>
                     </ul>
-                    <li>Wednesday <em>Practical Period</em></li>
+                </li>
+                <!-- Class Scheule -->
+                <li>
+                    <strong>Class Schedule: </strong> COS10026
                     <ul>
-                        <li>8:00 - 10:00 a.m.</li>
-                        <li>Block A-level 3-CSC2</li>
+                        <li>Tuesday: <em>Lecture Period</em></li>
+                        <ul>
+                            <li>2:00 - 4:00 p.m.</li>
+                            <li>Block A-level 8-LH4</li>
+                        </ul>
+                        <li>Wednesday <em>Practical Period</em></li>
+                        <ul>
+                            <li>8:00 - 10:00 a.m.</li>
+                            <li>Block A-level 3-CSC2</li>
+                        </ul>
                     </ul>
-                </ul>
-            </li>
-
-            <!-- Lecturer Details -->
-            <li>
-                <strong>Lecturer &amp; Group Supervisor: </strong>
-                <ul>
-                    <li>Name: Pawani Rasaratnam</li>
-                    <li>Email: <a href="mailto:ptrasaratnam@swin.edu.au">ptrasaratnam@swin.edu.au</a></li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <!-- Members Contributions & Details -->
-    <section aria-labelledby="members-contribution-section">
-        <h1 id="members-contribution-section">Our Members &amp; Contributions</h1>
-
-        <!-- Intro paragraph -->
-        <p>
-            Each member is allocated with equivalent amount of tasks in this project. Below you will find a brief profiel of each member, their roles &amp; contributions, and a personal quote. 
-        </p>
-
-        <dl>
-            <!-- member 1 -->
-            <dt>
-                <strong>Member 1:</strong> Jing Yee Ng (Jingyee)
-            </dt>
-            <dd>
-                <li class="roles">Role: Organizer &amp; Developer</li>
-                <li class="indivContrib">Individual Responsibility: <code>job.html</code></li>
-                <li class="shareContrib">Contributions: manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
-                <li class="Lang">Languages: </li>
-                <li class="progLang">Favourite Programming Language: </li>
-                <blockquote>
-                    <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
-                    <cite>— Jingyee</cite>
-                </blockquote>
-            </dd>
-
-            <!-- member 2 -->
-            <dt>
-                <strong>Member 2:</strong> Eaint Wunna Aung (Charlotte)
-            </dt>
-            <dd>
-                <li class="roles">Role: Leader &amp; Developer</li>
-                <li class="indivContrib">Individual Responsibility: <code>jobs.html</code></li>
-                <li class="shareContrib">Contributions: oversee the project progress and completion status, act as a group representative, give inputs on page design</li>
-                <li class="Lang">Languages: Burmese &amp; English</li>
-                <li class="progLang">Favourite Programming Language: Python <img src="images/python.ico" alt="python logo" width="20" height="20"></li>
-                <blockquote>
-                    <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
-                    <cite>— Charlotte</cite>
-                </blockquote>
-            </dd>
-
-            <!-- member 3 -->
-            <dt>
-                <strong>Member 3:</strong> Ye Htet Aung (Louis)
-            </dt>
-            <dd>
-                <li class="roles">Role: Editor &amp; Developer</li>
-                <li class="indivContrib">Individual Responsibility: <code>about.html</code> &plus; <code>style.css</code></li>
-                <li class="shareContrib">Contributions: review &amp; edit all files for consistency, formatting, and accessibility, design the external css file</li>
-                <li class="Lang">Languages: Burmese, English, &amp; German</li>
-                <li class="progLang">Favourite Programming Language: Java <img src="images/java.ico" alt="Java logo" height="20"></li>
-                <blockquote>
-                    <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
-                    <cite>— Aung</cite>
-                </blockquote>
-            </dd>
-
-            <!-- member 4 -->
-            <dt>
-                <strong>Member 4:</strong> Amirul Afif (Afif)
-            </dt>
-            <dd>
-                <li class="roles">Role: Manager &amp; Developer</li>
-                <li class="indivContrib">Individual Responsibility: <code>index.html</code> &plus; <code>style.css</code></li>
-                <li class="shareContrib">Contributions: monitor the project workflow on Jira, design the external css file</li>
-                <li class="Lang">Languages: </li>
-                <li class="progLang">Favourite Programming Language: </li>
-                <blockquote>
-                    <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
-                    <cite>— Afif</cite>
-                </blockquote>
-            </dd>
-        </dl>
-    </section>
-
-    <!-- Group Photo -->
-    <section aria-labelledby="photo-heading">
-        <h1 id="photo-heading">Our Team Photo</h1>
-
-        <figure>
-            <img src="" alt="Four members of NextGen Devs ..." width="" height="">
-            <figcaption>
-                The NextGen Devs Team members: during a group meeting at INTI
-            </figcaption>
-        </figure>
-    </section>
-
-    <!-- Fun Facts Table -->
-    <section aria-labelledby="funfacts-section">
-        <h1 id="funfacts-section">Fun Facts About Our Team</h1>
-
-        <p>Each of our members has a couple of amusing facts to share.</p>
-
-        <table>
-            <caption>Table of Fun Facts</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Member</th>
-                    <th scope="col">Personality</th>
-                    <th scope="col">Hobby</th>
-                    <th scope="col">Favourite Animal</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Ng Jing Yee</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Eaint Wunna Aung</td>
-                    <td>Easygoing &amp; friendly</td>
-                    <td>Big fan of Artic Monkey's songs</td>
-                    <td>A proud cat mom of an orange cat</td>
-                </tr>
-                <tr>
-                    <td>Ye Htet Aung</td>
-                    <td>Conservative &amp; friendly</td>
-                    <td>love to read online manga</td>
-                    <td>Owns a lovely dog named Yan Lon</td>
-                </tr>
-                <tr>
-                    <td>Amirul Afif</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+                </li>
+                <!-- Lecturer Details -->
+                <li>
+                    <strong>Lecturer &amp; Group Supervisor: </strong>
+                    <ul>
+                        <li>Name: Pawani Rasaratnam</li>
+                        <li>Email: <a href="mailto:ptrasaratnam@swin.edu.au">ptrasaratnam@swin.edu.au</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- Members Contributions & Details -->
+        <section aria-labelledby="members-contribution-section">
+            <h1 id="members-contribution-section">Our Members &amp; Contributions</h1>
+            <!-- Intro paragraph -->
+            <p>
+                Each member is allocated with equivalent amount of tasks in this project. Below you will find a brief profiel of each member, their roles &amp; contributions, and a personal quote.
+            </p>
+            <dl>
+                <!-- member 1 -->
+                <dt>
+                    <strong>Member 1:</strong> Jing Yee Ng (Jingyee)
+                </dt>
+                <dd>
+                    <li class="roles">Role: Organizer &amp; Developer</li>
+                    <li class="indivContrib">Individual Responsibility: <code>job.html</code></li>
+                    <li class="shareContrib">Contributions: manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
+                    <li class="Lang">Languages: </li>
+                    <li class="progLang">Favourite Programming Language: </li>
+                    <blockquote>
+                        <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                        <cite>— Jingyee</cite>
+                    </blockquote>
+                </dd>
+                <!-- member 2 -->
+                <dt>
+                    <strong>Member 2:</strong> Eaint Wunna Aung (Charlotte)
+                </dt>
+                <dd>
+                    <li class="roles">Role: Leader &amp; Developer</li>
+                    <li class="indivContrib">Individual Responsibility: <code>jobs.html</code></li>
+                    <li class="shareContrib">Contributions: oversee the project progress and completion status, act as a group representative, give inputs on page design</li>
+                    <li class="Lang">Languages: Burmese &amp; English</li>
+                    <li class="progLang">Favourite Programming Language: Python <img src="images/python.ico" alt="python logo" style="width: 20px; height: 20px;"></li>
+                    <blockquote>
+                        <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                        <cite>— Charlotte</cite>
+                    </blockquote>
+                </dd>
+                <!-- member 3 -->
+                <dt>
+                    <strong>Member 3:</strong> Ye Htet Aung (Louis)
+                </dt>
+                <dd>
+                    <li class="roles">Role: Editor &amp; Developer</li>
+                    <li class="indivContrib">Individual Responsibility: <code>about.html</code> &plus; <code>styles.css</code></li>
+                    <li class="shareContrib">Contributions: review &amp; edit all files for consistency, formatting, and accessibility, design the external css file</li>
+                    <li class="Lang">Languages: Burmese, English, &amp; German</li>
+                    <li class="progLang">Favourite Programming Language: Java <img src="images/java.ico" alt="Java logo" style="height: 20px;"></li>
+                    <blockquote>
+                        <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                        <cite>— Aung</cite>
+                    </blockquote>
+                </dd>
+                <!-- member 4 -->
+                <dt>
+                    <strong>Member 4:</strong> Amirul Afif (Afif)
+                </dt>
+                <dd>
+                    <li class="roles">Role: Manager &amp; Developer</li>
+                    <li class="indivContrib">Individual Responsibility: <code>index.html</code> &plus; <code>styles.css</code></li>
+                    <li class="shareContrib">Contributions: monitor the project workflow on Jira, design the external css file</li>
+                    <li class="Lang">Languages: </li>
+                    <li class="progLang">Favourite Programming Language: </li>
+                    <blockquote>
+                        <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                        <cite>— Afif</cite>
+                    </blockquote>
+                </dd>
+            </dl>
+        </section>
+        <!-- Group Photo -->
+        <section aria-labelledby="photo-heading">
+            <h1 id="photo-heading">Our Team Photo</h1>
+            <figure>
+                <img src="" alt="Four members of NextGen Devs ..." width="" height="">
+                <figcaption>
+                    The NextGen Devs Team members: during a group meeting at INTI
+                </figcaption>
+            </figure>
+        </section>
+        <!-- Fun Facts Table -->
+        <section aria-labelledby="funfacts-section">
+            <h1 id="funfacts-section">Fun Facts About Our Team</h1>
+            <p>Each of our members has a couple of amusing facts to share.</p>
+            <div class="table-container">
+                <table>
+                    <caption>Table of Fun Facts</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Member</th>
+                            <th scope="col">Personality</th>
+                            <th scope="col">Hobby</th>
+                            <th scope="col">Favourite Animal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ng Jing Yee</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Eaint Wunna Aung</td>
+                            <td>Easygoing &amp; friendly</td>
+                            <td>Big fan of Artic Monkey's songs</td>
+                            <td>A proud cat mom of an orange cat</td>
+                        </tr>
+                        <tr>
+                            <td>Ye Htet Aung</td>
+                            <td>Conservative &amp; friendly</td>
+                            <td>love to read online manga</td>
+                            <td>Owns a lovely dog named Yan Lon</td>
+                        </tr>
+                        <tr>
+                            <td>Amirul Afif</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
     
     <!-- footer -->
     <footer>
