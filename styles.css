@@ -143,6 +143,19 @@ header nav ul li a:hover {
   background-color: var(--peach-light);
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); 
+    clip-path: inset(50%);  
+    white-space: nowrap;    
+    border: 0;
+}
+
 /* 
 about.html styling 
 */
@@ -418,7 +431,215 @@ The end of about.html
 /* 
 jobs.html styling 
 */
-
+.jobsHeading {
+  text-align: center;
+  padding: 3.5rem 2rem 3rem;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  background-image: linear-gradient(
+    160deg,
+    rgba(42,  16,  80, 0.92) 0%,
+    rgba(61,  26, 112, 0.78) 45%,
+    rgba(123, 63, 190, 0.85) 75%,
+    rgba(42,  16,  80, 0.95) 100%
+  );
+  background-color: var(--purple-inkk);
+}
+ 
+/* Benefits aside */
+.job-aside {
+  float: right;
+  position: sticky;
+  top: 0;
+  width: 25%;
+  background-color: var(--purple-inkk);
+  border-left: 5px solid var(--peach);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 1.3rem;
+  margin: 2rem 2rem 2rem 1.5rem;
+  box-shadow: 0 2px 10px var(--black-less);
+}
+ 
+.job-aside h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--peach);
+  border-bottom: 2px solid var(--mint);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+ 
+.job-aside ul {
+  list-style: none;
+  padding: 0.01rem;
+}
+ 
+.job-aside ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--white-less);
+  line-height: var(--lineHeight);
+}
+ 
+.job-aside ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-size: 0.9rem;
+  color: var(--mint);
+  line-height: 2;
+}
+ 
+/* Job cards container */
+.available-jobs {
+  overflow: hidden;
+  padding: 1.5rem 2rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+/* Individual job card */
+.job {
+  background-color: var(--bg-card);
+  border-top: 5px solid var(--purple-dark);
+  border-left: 3px solid var(--purple-light);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 5px rgba(42, 16, 80, 0.18);
+  transition: box-shadow 0.25s ease,border-left-color 0.25s ease;
+}
+ 
+.job:hover {
+  box-shadow: 0 4px 18px var(--black-less);
+  border-left-color: var(--peach);
+}
+ 
+/* Job title heading */
+.job h2 {
+  margin-bottom: 0.3rem;
+}
+ 
+/* Reference Number heading */
+.job h3 {
+  display: inline-block;
+  font-size: 0.80rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  background-color: var(--purple-deeper);
+  padding: 0.5em 0.9em;
+  border-radius: 10px;
+  margin-bottom: 1.4rem;
+}
+ 
+/* Sub-section headings (Salary, Responsibilities…) */
+.job h4 {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-inkk);
+  border-bottom: 1.5px solid var(--peach);
+  padding-bottom: 0.3rem;
+  margin-top: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+ 
+/* Short description */
+.short-description {
+  font-size: 0.97rem;
+  color: var(--black-less);
+  background-color: var(--bg-card-alt);
+  border-left: 4px solid var(--mint);
+  border-radius: 0 5px 5px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  line-height: var(--lineHeight);
+}
+ 
+.job ul, .job ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+ 
+.job ul {
+  list-style: disc;
+}
+ 
+.job ol {
+  list-style: decimal;
+}
+ 
+.job li {
+  font-size: 0.93rem;
+  color: var(--purple-extreme);
+  margin-bottom: 0.35rem;
+  line-height: var(--lineHeight);
+}
+ 
+.job ol li::marker {
+  font-weight: 800;
+  color: var(--purple-deeper);
+}
+ 
+/* Apply Now */
+.apply-box {
+  clear: both;
+  text-align: center;
+  padding: 2.5rem 1rem 3rem;
+}
+ 
+.apply-now {
+  display: inline-block;
+  background-color: var(--purple-inkk);
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 3.2rem;
+  border-radius: 4px;
+  border: 2px solid var(--peach);
+  text-decoration: none;
+  transition: background-color 0.25s ease,
+              color           0.25s ease,
+              border-color    0.25s ease,
+              transform       0.15s ease;
+}
+ 
+.apply-now:hover, .apply-now:focus {
+  background-color: var(--peach);
+  color: var(--purple-inkk);
+  border-color: var(--purple-inkk);
+  transform: translateY(-2px);
+  outline: none;
+}
+ 
+/* ── Responsive — narrow viewports ── */
+@media (max-width: 720px) {
+  .job-aside {
+    float: none;
+    width: auto;
+    margin: 1.5rem 1rem;
+    border-left: none;
+    border-top: 5px solid var(--peach);
+    border-radius: 8px;
+  }
+ 
+  .available-jobs {
+    padding: 0.5rem 1rem 0;
+  }
+ 
+  .job {
+    padding: 1.4rem 1.2rem;
+  }
+}
 
 /* 
 The end of jobs.html
@@ -497,6 +718,13 @@ footer > p {
   font-size: 0.82em;
   color: rgba(232, 213, 255, 0.50);
   letter-spacing: 0.06em;
+}
+
+/* media query for jobs.html making aside responsive */
+@media (max-width: 720px) {
+  .job-aside {
+    position: static;
+  }
 }
 
 /* global media query responsive navigation setup */
