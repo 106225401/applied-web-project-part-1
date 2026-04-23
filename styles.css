@@ -68,10 +68,10 @@ a {
   transition: color 2s ease;
 }
 
-a:hover,
-a:focus {
+header nav a:hover,
+header nav a:focus {
   color: var(--peach);
-  outline: none;
+  outline: 2px solid black;
 }
 
 ul, ol {
