@@ -14,15 +14,15 @@
    ================================================================ */
 :root {
   /* ── Triadic palette ── */
-  --purple:        #C08EFA;
-  --purple-dark:   #7B3FBE;
-  --purple-deeper: #3D1A70;
-  --purple-ink:    #2A1050;   /* darkest — footer bg, text on light */
-  --peach:         #FAC08E;
-  --mint:          #8EFAC0;
+  --purple:        #D9BAFC;
+  --purple-dark:   #C08EFA;
+  --purple-deeper: #7B3FBE;
+  --purple-inkk:   #3D1A70;  /* darkest — footer bg, text on light */
+  --peach:         #FCD9BA;
+  --mint:          #BAFCD9;
 
   /* ── Surface colours ── */
-  --bg-page:       #C08EFA;   /* full-page background  */
+  --bg-page:       #D9BAFC;   /* full-page background  */
   --bg-header:     #3D1A70;
   --bg-card:       #FFFFFF;
   --bg-card-alt:   #F7F0FF;
@@ -124,34 +124,10 @@ pre code {
 
 
 /* ================================================================
-   3. ACCESSIBILITY — SKIP LINK
-   ================================================================ */
-.skip-link {
-  position: absolute;
-  top: -120px;
-  left: 1rem;
-  background-color: var(--peach);
-  color: var(--purple-ink);
-  padding: 0.55rem 1.1rem;
-  font-weight: 700;
-  border-radius: 0 0 5px 5px;
-  z-index: 9999;
-  text-decoration: none;
-  transition: top 0.25s ease;
-}
-
-.skip-link:focus {
-  top: 0;
-  outline: 3px solid var(--purple-dark);
-  outline-offset: 2px;
-}
-
-
-/* ================================================================
-   4. HEADER
+   3. HEADER
    ================================================================ */
 header {
-  background-color: var(--bg-header);
+  background-color: var(--bg-page);
   padding: 0.6rem 2.5rem;
   position: sticky;
   top: 0;
@@ -173,17 +149,14 @@ header > div {
 header > div img {
   width: 58px;
   height: 58px;
-  border-radius: 50%;
-  border: 2px solid var(--peach);
   object-fit: cover;
 }
 
 .teamName {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--peach);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  color: var(--bg-header);
+  letter-spacing: 0.1em;
 }
 
 /* ── Primary navigation — floated RIGHT ── */
@@ -197,7 +170,7 @@ header nav[aria-label="Main navigation"] ul {
   align-items: center;
   gap: 0;
   padding: 0;
-  height: 70px;
+  height: 90px;
 }
 
 header nav[aria-label="Main navigation"] ul li a {
@@ -205,7 +178,7 @@ header nav[aria-label="Main navigation"] ul li a {
   align-items: center;
   height: 100%;
   padding: 0 1.25rem;
-  color: rgba(232, 213, 255, 0.88);
+  color: var(--bg-header);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
