@@ -1,15 +1,11 @@
-/* ================================================================
-   ----------------------------------------------------------------
-   Triadic Colour Scheme:
+/* 
+Triadic Colour Scheme:
      Primary   #C08EFA  (Purple   — page background)
      Accent 1  #FAC08E  (Peach    — highlights, headings)
      Accent 2  #8EFAC0  (Mint     — blockquotes, borders)
-   ================================================================ */
+*/
 
-
-/* ================================================================
-   1. CUSTOM PROPERTIES
-   ================================================================ */
+/* Variables */
 :root {
   /* ── Triadic palette ── */
   --purple:        #D9BAFC;
@@ -19,26 +15,22 @@
   --peach:         #FCD9BA;
   --mint:          #BAFCD9;
 
-  /* ── Surface colours ── */
-  --bg-page:       #D9BAFC;   /* full-page background  */
+  /* ── surface variables ── */
+  --bg-page:       #D9BAFC;   
   --bg-header:     #3D1A70;
   --bg-card:       #FFFFFF;
   --bg-card-alt:   #F7F0FF;
   --bg-footer:     #2A1050;
 
-  /* ── Typography ── */
-  --font-body:     'Verdana', Calibri, Candara, sans-serif;
-  --lh:            1.5;
-  --ls:            0.05em;   /* ≈ 1.5× typical browser default tracking */
+  /* ── Typography variables ── */
+  --font:     Verdana, Arial, Helvetica, sans-serif;
+  --lineHeight:    1.5;
+  --letterSpace:   0.05em;
 }
 
 
-/* ================================================================
-   2. RESET & BASE
-   ================================================================ */
-*,
-*::before,
-*::after {
+/* Reset & Base */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -46,13 +38,13 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 body {
-  font-family:    var(--font-body);
-  line-height:    var(--lh);
-  letter-spacing: var(--ls);
+  font-family:    var(--font);
+  line-height:    var(--lineHeight);
+  letter-spacing: var(--letterSpace);
   background-color: var(--bg-page);
   color: var(--purple-ink);
 }
@@ -86,11 +78,11 @@ p {
   margin-bottom: 1rem;
 }
 
-hr {
+/* hr {
   border: none;
   border-top: 2px solid rgba(192, 142, 250, 0.45);
   margin: 1.5rem 0;
-}
+} */
 
 code {
   font-family: 'Courier New', Courier, monospace;
