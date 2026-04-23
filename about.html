@@ -21,17 +21,15 @@
 </head>
 
 <body>
-    <!-- <a href="#main" class="skip-link">Skip to main content</a> -->
-
     <!-- header -->
     <header>
-        <!-- Logo.png along with team name -->
-        <div>
-            <a href="index.html" target="_self"><img src="images/logo.png" alt="NextGen Devs logo" style="width: 80px; height: 80px;"></a>
-            <span class="teamName">NextGen Devs</span>
-        
-        
-            <!-- Common navigation menu -->
+        <!-- Top bar: company logo and common navigation menu-->
+        <div class="top-bar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="NextGen Devs logo">
+                <span>NextGen Devs</span>
+            </a>
+
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -41,7 +39,9 @@
                 </ul>
             </nav>
         </div>
-    </header>
+
+        <h1>About Us</h1>
+    </header>   
 
     <main id="main">
         <!-- Intro to our team -->
@@ -70,16 +70,18 @@
                 <li>
                     <strong>Class Schedule: </strong> COS10026
                     <ul>
-                        <li>Tuesday: <em>Lecture Period</em></li>
-                        <ul>
-                            <li>2:00 - 4:00 p.m.</li>
-                            <li>Block A-level 8-LH4</li>
-                        </ul>
+                        <li>Tuesday: <em>Lecture Period</em>
+                            <ul>
+                                <li>2:00 - 4:00 p.m.</li>
+                                <li>Block A-level 8-LH4</li>
+                            </ul>
+                        
                         <li>Wednesday <em>Practical Period</em></li>
-                        <ul>
-                            <li>8:00 - 10:00 a.m.</li>
-                            <li>Block A-level 3-CSC2</li>
-                        </ul>
+                            <ul>
+                                <li>8:00 - 10:00 a.m.</li>
+                                <li>Block A-level 3-CSC2</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <!-- Lecturer Details -->
@@ -92,6 +94,7 @@
                 </li>
             </ul>
         </section>
+
         <!-- Members Contributions & Details -->
         <section aria-labelledby="members-contribution-section">
             <h1 id="members-contribution-section">Our Members &amp; Contributions</h1>
@@ -105,13 +108,15 @@
                     <strong>Member 1:</strong> Ng Jing Yee (Jingyee)
                 </dt>
                 <dd>
-                    <li class="roles">Role: Organizer &amp; Developer</li>
-                    <li class="indivContrib">Individual Responsibility: <code>job.html</code></li>
-                    <li class="shareContrib">Contributions: manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
-                    <li class="Lang">Languages: </li>
-                    <li class="progLang">Favourite Programming Language: </li>
+                    <ul>
+                        <li class="roles">Role: Organizer &amp; Developer</li>
+                        <li class="indivContrib">Individual Responsibility: <code>job.html</code></li>
+                        <li class="shareContrib">Contributions: manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
+                        <li class="Lang">Languages: </li>
+                        <li class="progLang">Favourite Programming Language: </li>
+                    </ul>
                     <blockquote>
-                        <p id="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
+                        <p class="about-our-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. "</p>
                         <cite>— Jingyee</cite>
                     </blockquote>
                 </dd>
@@ -162,6 +167,7 @@
                 </dd>
             </dl>
         </section>
+
         <!-- Group Photo -->
         <section aria-labelledby="photo-heading">
             <h1 id="photo-heading">Our Team Photo</h1>
