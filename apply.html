@@ -17,8 +17,25 @@
 
         <!-- Embedded CSS for UI Styling -->
         <style>
-            .skip-link { position: absolute; top: -100px; }
-            .skip-link:focus { top: 0; }
+            .skip-link {
+                position: absolute;
+                top: -100px; 
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                background: var(--purple-ink);
+                color: white;
+                padding: 10px;
+                z-index: 100; 
+                transition: top 0.3s; 
+            }
+            .skip-link:focus {
+                top: 0; 
+                position: static;
+                background-color: var(--mint);
+                color: var(--purple-inkk);
+            }
         </style>
     </head>
 
@@ -48,15 +65,15 @@
         <main id="main">
 
             <!-- Hero section: page title and call-to-action -->
-            <section class="hero">
-                <h1>Job Application Page</h1>
-                <a href="#application-form" class="cta-button">Apply Now</a>
+            <section class="applyHeading">
+                <h1>Job Application Form</h1>
             </section>
-            
-            <h2 id="form-heading">Application Form</h2>
 
-            <nav aria-label="Job application form sections">
+            <!-- <h2 id="form-heading">Application Form</h2> -->
+
+            <nav aria-label="Job application form sections" class="shortKeys">
                 <ul>
+                    <li><a href="#application-form">Apply Now</a></li>
                     <li><a href="#job">Job</a></li>
                     <li><a href="#applicant-details">Details</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -67,8 +84,8 @@
                 action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                 <!-- Position selection section -->
-                <section id="job" class="form-section">
-                    <h3>Position to Apply For</h3>
+                <section id="job" class="formSection">
+                    <h2>Position to Apply For</h2>
 
                     <label for="jobref">Job Reference Number:</label>
                     <input type="text" id="jobref" name="jobref"
@@ -87,21 +104,21 @@
                 </section>
 
                 <!-- Applicant details section -->
-                <section id="applicant-details" class="form-section">
-                    <h3>Applicant Details</h3>
+                <section id="applicant-details" class="formSection">
+                    <h2>Applicant Details</h2>
 
                     <fieldset>
                         <legend>Personal Information</legend>
 
-                        <label for="fname">First Name:</label>
-                        <input type="text" id="fname" name="fname"
+                        <label for="fName">First Name:</label>
+                        <input type="text" id="fName" name="fName"
                             autocomplete="given-name"
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
                             required>
 
-                        <label for="lname">Last Name:</label>
-                        <input type="text" id="lname" name="lname"
+                        <label for="lName">Last Name:</label>
+                        <input type="text" id="lName" name="lName"
                             autocomplete="family-name"
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
@@ -185,11 +202,8 @@
                 </section>
 
                 <!-- Skills selection section -->
-                <section id="skills" class="form-section">
-                    <h3>Professional Skills</h3>
-
-                    <fieldset>
-                        <legend>Skills</legend>
+                <section id="skills" class="formSection">
+                    <h2>Professional Skills</h2>
 
                         <input type="checkbox" id="excel" name="skill[]" value="excel" required>
                         <label for="excel">Excel</label>
@@ -207,18 +221,19 @@
                         <label for="spss">SPSS</label>
 
                         <input type="checkbox" id="other" name="skill[]" value="other">
-                        <label for="other">Other skills…</label>
+                        <label for="other">Other skills</label>
 
                         <label for="others">Other Skills</label>
                         <textarea id="others" name="others"
                             placeholder="Write your other skills here..."
                             rows="5" cols="50"></textarea>
-                    </fieldset>
                 </section>
 
                 <!-- Form submission and reset buttons -->
-                <button type="submit">Apply</button>
-                <button type="reset">Reset Form</button>
+                <div class="twoBt">
+                    <button id="applyBt" type="submit">Apply</button>
+                    <button id="resetBt" type="reset">Reset Form</button>
+                </div>
             </form>
         </main>
 
