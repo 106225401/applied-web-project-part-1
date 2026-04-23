@@ -16,12 +16,23 @@
 
     <!-- Embedded CSS for UI Styling -->
     <style>
+        code {
+            font-size: 1em;
+            background-color: var(--purple-light);
+            padding: 0.3em 0.3em;
+            border-radius: 5px;
+            color: var(--purple-inkk);
+        }
 
+        .progLang img {
+            display: inline;
+            vertical-align: middle;
+            margin-left: 1px;
+        }
     </style>
 </head>
 
 <body>
-    
     <!-- header -->
     <header>
         <!-- Top bar: company logo and common navigation menu-->
@@ -42,22 +53,22 @@
         </div>
     </header>   
 
-    <main id="main">
+    <main>
         
         <!-- Intro to our team -->
-        <section aria-labelledby="about-our-quote">
-            <h1 id="about-our-quote">About Us</h1>
+        <section class="ourQuote" aria-labelledby="about-our-quote">
+            <h1 id="about-our-quote">Who We Are</h1>
             <!-- quote of our team -->
             <blockquote>
                 <p>"Code, Create, Conquer"</p>
                 <cite>— NextGen Devs</cite>
             </blockquote>
             <!-- introductory paragraph to our team -->
-            <p>Meet our <strong>NextGen Devs</strong>. We are a team of four developers working to build a website for a university department seeking support in digital learning and research.</p>
+            <p>We are a team working to build a website for a university department seeking support in digital learning and research.</p>
         </section>
 
         <!-- Group Details -->
-        <section aria-labelledby="group-details-section">
+        <section class="groupDetails" aria-labelledby="group-details-section">
             <h2 id="group-details-section">Group Details</h2>
             
             <ul>
@@ -79,14 +90,14 @@
                     <ul>
                         <li>COS20007</li>
 
-                        <li>Tuesday: <em>Lecture Period</em>
+                        <li>Tuesday: <em>Lecture</em>
                             <ul>
                                 <li>2:00 - 4:00 p.m.</li>
                                 <li>Block A, Level 8, LH4</li>
                             </ul>
                         </li>
 
-                        <li>Wednesday: <em>Practical Period</em>
+                        <li>Wednesday: <em>Lab</em>
                             <ul>
                                 <li>8:00 - 10:00 a.m.</li>
                                 <li>Block A, Level 3, CSC2</li>
@@ -107,7 +118,7 @@
         </section>
 
         <!-- Members Contributions & Details -->
-        <section aria-labelledby="members-contribution-section">
+        <section class="contribution" aria-labelledby="members-contribution-section">
             <h2 id="members-contribution-section">Our Members &amp; Contributions</h2>
             
             <!-- Intro paragraph -->
@@ -118,18 +129,18 @@
             <dl>
                 <!-- member 1 -->
                 <dt>
-                    <strong>Member 1:</strong> Ng Jing Yee (Jingyee)
+                    <span class="name"><strong>Member 1:</strong> Ng Jing Yee (Jingyee)</span>
 
-                    <span>106225401</span>
+                    <span class="id">106225401</span>
                 </dt>
 
                 <dd>
                     <ul>
-                        <li class="roles">Role: Organizer &amp; Developer</li>
-                        <li class="indivContrib">Individual Responsibility: <code>apply.html</code></li>
-                        <li class="shareContrib">Contributions: manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
-                        <li class="Lang">Languages: Mandarin, Bahasa Melayu, &amp; English</li>
-                        <li class="progLang">Favourite Programming Language: Python <img src="images/python.ico" alt="python logo" style="width: 20px; height: 20px;"></li>
+                        <li class="roles"><strong>Role:</strong> Organizer &amp; Developer</li>
+                        <li class="indivContrib"><strong>Individual Responsibility: </strong><code>apply.html</code></li>
+                        <li class="shareContrib"><strong>Contributions:</strong> manage Github &amp; Jira project, give inputs on page design, organize team communication</li>
+                        <li class="Lang"><strong>Languages:</strong> Mandarin, Bahasa Melayu, &amp; English</li>
+                        <li class="progLang"><strong>Favourite Programming Language:</strong> Python <img src="images/python.ico" alt="python logo" style="width: 20px; height: 20px;"></li>
                     </ul>
 
                     <blockquote>
@@ -143,17 +154,17 @@
 
                 <!-- member 2 -->
                 <dt>
-                    <strong>Member 2:</strong> Eaint Wunna Aung (Charlotte)
+                    <span class="name"><strong>Member 2:</strong> Eaint Wunna Aung (Charlotte)</span>
 
-                    <span>000</span>
+                    <span class="id">000</span>
                 </dt>
                 <dd>
                     <ul>
-                        <li class="roles">Role: Leader &amp; Developer</li>
-                        <li class="indivContrib">Individual Responsibility: <code>jobs.html</code></li>
-                        <li class="shareContrib">Contributions: oversee the project progress and completion status, act as a group representative, give inputs on page design</li>
-                        <li class="Lang">Languages: Burmese &amp; English</li>
-                        <li class="progLang">Favourite Programming Language: Python <img src="images/python.ico" alt="python logo" style="width: 20px; height: 20px;"></li>
+                        <li class="roles"><strong>Role:</strong> Leader &amp; Developer</li>
+                        <li class="indivContrib"><strong>Individual Responsibility:</strong> <code>jobs.html</code></li>
+                        <li class="shareContrib"><strong>Contributions:</strong> oversee the project progress and completion status, act as a group representative, give inputs on page design</li>
+                        <li class="Lang"><strong>Languages:</strong> Burmese &amp; English</li>
+                        <li class="progLang"><strong>Favourite Programming Language:</strong> Python <img src="images/python.ico" alt="python logo" style="width: 20px; height: 20px;"></li>
                     </ul>
 
                     <blockquote>
@@ -167,17 +178,17 @@
 
                 <!-- member 3 -->
                 <dt>
-                    <strong>Member 3:</strong> Ye Htet Aung (Louis)
+                    <span class="name"><strong>Member 3:</strong> Ye Htet Aung (Louis)</span>
 
-                    <span>106399199</span>
+                    <span class="id">106399199</span>
                 </dt>
                 <dd>
                     <ul>
-                        <li class="roles">Role: Editor &amp; Developer</li>
-                        <li class="indivContrib">Individual Responsibility: <code>about.html</code> &plus; <code>styles.css</code></li>
-                        <li class="shareContrib">Contributions: review &amp; edit all files for consistency, formatting, and accessibility, design the external css file</li>
-                        <li class="Lang">Languages: Burmese, English, &amp; German</li>
-                        <li class="progLang">Favourite Programming Language: Java <img src="images/java.ico" alt="Java logo" style="height: 20px;"></li>
+                        <li class="roles"><strong>Role:</strong> Editor &amp; Developer</li>
+                        <li class="indivContrib"><strong>Individual Responsibility:</strong> <code>about.html</code> &plus; <code>styles.css</code></li>
+                        <li class="shareContrib"><strong>Contributions:</strong> review &amp; edit all files for consistency, formatting, and accessibility, design the external css file</li>
+                        <li class="Lang"><strong>Languages:</strong> Burmese, English, &amp; German</li>
+                        <li class="progLang"><strong>Favourite Programming Language:</strong> Java <img src="images/java.ico" alt="Java logo" style="height: 20px;"></li>
                     </ul>
 
                     <blockquote>
@@ -191,17 +202,17 @@
 
                 <!-- member 4 -->
                 <dt>
-                    <strong>Member 4:</strong> Amirul Afif (Afif)
+                    <span class="name"><strong>Member 4:</strong> Amirul Afif (Afif)</span>
 
-                    <span>106201456</span>
+                    <span class="id">106201456</span>
                 </dt>
                 <dd>
                     <ul>
-                        <li class="roles">Role: Manager &amp; Developer</li>
-                        <li class="indivContrib">Individual Responsibility: <code>index.html</code> &plus; <code>styles.css</code></li>
-                        <li class="shareContrib">Contributions: monitor the project workflow on Jira, design the external css file</li>
-                        <li class="Lang">Languages: Bahasa Melayu &amp; English</li>
-                        <li class="progLang">Favourite Programming Language: </li>
+                        <li class="roles"><strong>Role:</strong> Manager &amp; Developer</li>
+                        <li class="indivContrib"><strong>Individual Responsibility:</strong> <code>index.html</code> &plus; <code>styles.css</code></li>
+                        <li class="shareContrib"><strong>Contributions:</strong> monitor the project workflow on Jira, design the external css file</li>
+                        <li class="Lang"><strong>Languages:</strong> Bahasa Melayu &amp; English</li>
+                        <li class="progLang"><strong>Favourite Programming Language:</strong> </li>
                     </ul>
 
                     <blockquote>
@@ -216,19 +227,19 @@
         </section>
 
         <!-- Group Photo -->
-        <section aria-labelledby="photo-heading">
+        <section class="gpPic" aria-labelledby="photo-heading">
             <h2 id="photo-heading">Our Team Photo</h2>
 
             <figure>
-                <img src="" alt="Four members of NextGen Devs ..." loading="lazy" style="width: 10; height: 10;">
+                <img src="" alt="The NextGen Devs Team members during a group meeting at INTI" loading="lazy" style="width: 10; height: 10;">
                 <figcaption>
-                    The NextGen Devs Team members during a group meeting at INTI
+                    From left to right: , , , 
                 </figcaption>
             </figure>
         </section>
 
         <!-- Fun Facts Table -->
-        <section aria-labelledby="funfacts-section">
+        <section class="funFact" aria-labelledby="funfacts-section">
             <h2 id="funfacts-section">Fun Facts About Our Team</h2>
 
             <p>Each of our members has a few amusing facts to share.</p>
