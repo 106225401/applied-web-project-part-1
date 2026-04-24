@@ -1,0 +1,284 @@
+ 
+/* ── Labels in the grid (block labels: text inputs, select) ── */
+ 
+/* ── Text inputs & select in the grid ── */
+.formSection input[type="text"],
+.formSection input[type="email"],
+.formSection input[type="tel"],
+.formSection select {
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--font);
+  font-size: 0.90rem;
+  color: var(--purple-inkk);
+  background-color: var(--white);
+  border: 1.5px solid var(--purple-lesser);
+  border-radius: 5px;
+  letter-spacing: var(--letterSpace);
+  line-height: var(--lineHeight);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.formSection input[type="text"]:focus,
+.formSection input[type="email"]:focus,
+.formSection input[type="tel"]:focus,
+.formSection select:focus {
+  border-color: var(--purple-deeper);
+  box-shadow: 0 0 0 3px var(--purple-light);
+  outline: none;
+}
+ 
+/* Valid state — green-tinted border using mint */
+.formSection input[type="text"]:valid:not(:placeholder-shown),
+.formSection input[type="email"]:valid:not(:placeholder-shown),
+.formSection input[type="tel"]:valid:not(:placeholder-shown) {
+  border-color: var(--mint);
+}
+ 
+/* Invalid state after interaction */
+.formSection input[type="text"]:invalid:not(:placeholder-shown),
+.formSection input[type="email"]:invalid:not(:placeholder-shown),
+.formSection input[type="tel"]:invalid:not(:placeholder-shown) {
+  border-color: #e05c5c;
+  box-shadow: 0 0 0 3px rgba(224, 92, 92, 0.18);
+}
+ 
+/* Select arrow cosmetics */
+.formSection select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237B3FBE' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  padding-right: 2.2rem;
+  cursor: pointer;
+}
+ 
+/* ═══════════════════════════════════════════════════════════════
+   6. NESTED GENDER FIELDSET — radio buttons in a flex row
+   ═══════════════════════════════════════════════════════════════ */
+.formSection fieldset fieldset {
+  border: 1.5px solid var(--purple-light);
+  border-radius: 5px;
+  padding: 0.9rem 1.2rem;
+  background-color: var(--bg-card);
+ 
+  /* Override the outer grid — flex row for radio + label pairs */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.8rem;
+}
+ 
+/* Inner legend (Gender) */
+.formSection fieldset fieldset > legend {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-deeper);
+  background-color: transparent;
+  padding: 0 0.4em;
+  border-radius: 0;
+  margin-bottom: 0.3rem;
+  /* Make legend flow inside the flex container */
+  flex-basis: 100%;
+}
+ 
+/* Radio input */
+.formSection input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--purple-deeper);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+ 
+/* Radio label — inline, tight to its input */
+.formSection fieldset fieldset label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--purple-inkk);
+  cursor: pointer;
+  margin-right: 0.4rem;
+  /* Reset grid alignment from outer fieldset */
+  align-self: auto;
+}
+ 
+/* ═══════════════════════════════════════════════════════════════
+   7. JOB REFERENCE SECTION — #job.formSection
+   Label + input are direct children of the section (no fieldset),
+   so we use flex column then a CSS Grid wrapper trick via a
+   display:contents-safe approach: treat the section itself as grid.
+   ═══════════════════════════════════════════════════════════════ */
+#job.formSection {
+  /* Override flex to grid so label|input align in 2 columns */
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: 1rem;
+  row-gap: 0.85rem;
+  align-items: start;
+}
+ 
+/* h2 and div#jobhelp span full width */
+#job.formSection h2,
+#job.formSection div {
+  grid-column: 1 / -1;
+}
+ 
+/* Label in the job section */
+#job.formSection > label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--purple-inkk);
+  align-self: center;
+}
+ 
+/* ── #jobhelp hint box ── */
+#jobhelp {
+  background-color: var(--bg-card-alt);
+  border-left: 4px solid var(--mint);
+  border-radius: 0 5px 5px 0;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--black-less);
+  line-height: var(--lineHeight);
+}
+ 
+#jobhelp p {
+  font-weight: 600;
+  color: var(--purple-inkk);
+  margin-bottom: 0.5rem;
+}
+ 
+#jobhelp ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+ 
+#jobhelp ul li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.86rem;
+}
+ 
+#jobhelp ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--purple-deeper);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+ 
+/* ═══════════════════════════════════════════════════════════════
+   8. SKILLS SECTION — #skills.formSection
+   Checkboxes + labels rendered as a flex-wrap chip grid.
+   Textarea gets its own full-width row beneath.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Checkbox + label pairs ── */
+/* Each checkbox is followed immediately by its label.
+   We wrap them visually using a flex container on the section,
+   but since they are bare siblings we float them into a chip grid
+   by making input[type=checkbox] + label behave as an inline unit. */
+ 
+/* Container for the checkbox grid — we target the section's direct
+   input[type=checkbox] elements and their adjacent labels */
+#skills.formSection input[type="checkbox"] {
+  /* Hide default and replace with custom style */
+  width: 18px;
+  height: 18px;
+  accent-color: var(--purple-deeper);
+  cursor: pointer;
+  /* Inline positioning so it sits left of the label chip */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  flex-shrink: 0;
+}
+ 
+/* Each label after a checkbox becomes a chip */
+#skills.formSection input[type="checkbox"] + label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--purple-inkk);
+  background-color: var(--bg-card-alt);
+  border: 1.5px solid var(--purple-lesser);
+  border-radius: 20px;
+  padding: 0.35rem 1rem 0.35rem 0.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s ease,
+              border-color     0.2s ease,
+              color            0.2s ease;
+  vertical-align: middle;
+}
+ 
+/* Checked state — chip highlights */
+#skills.formSection input[type="checkbox"]:checked + label {
+  background-color: var(--purple-deeper);
+  border-color: var(--purple-deeper);
+  color: var(--white);
+}
+ 
+#skills.formSection input[type="checkbox"] + label:hover {
+  border-color: var(--purple-deeper);
+  background-color: var(--purple-light);
+}
+ 
+/* Hide the raw checkbox visually but keep it accessible —
+   position it just before the label so :checked still works */
+#skills.formSection input[type="checkbox"] {
+  position: relative;
+  opacity: 1;
+  /* Keep visible for native validation & accessibility */
+}
+ 
+/* ── "Other Skills" textarea label ── */
+#skills.formSection label[for="others"] {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--purple-inkk);
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+  clear: both;
+}
+ 
+/* ── Textarea ── */
+.formSection textarea {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font);
+  font-size: 0.90rem;
+  color: var(--purple-inkk);
+  background-color: var(--white);
+  border: 1.5px solid var(--purple-lesser);
+  border-radius: 5px;
+  resize: vertical;
+  line-height: var(--lineHeight);
+  letter-spacing: var(--letterSpace);
+  min-height: 110px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.formSection textarea:focus {
+  border-color: var(--purple-deeper);
+  box-shadow: 0 0 0 3px var(--purple-light);
+  outline: none;
+}
+ 
+/* ═══════════════════════════════════════════════════════════════
+   9. SUBMIT & RESET BUTTONS — div.twoBt
+   Flex row centred, two distinct styles: primary + ghost.
+   ═══════════════════════════════════════════════════════════════ */
+ 

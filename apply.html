@@ -14,28 +14,11 @@
         <link rel="icon" type="image/x-icon" href="images/logo.ico">
 
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="another.css">
 
         <!-- Embedded CSS for UI Styling -->
         <style>
-            .skip-link {
-                position: absolute;
-                top: -100px; 
-                left: 0;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                background: var(--purple-ink);
-                color: white;
-                padding: 10px;
-                z-index: 100; 
-                transition: top 0.3s; 
-            }
-            .skip-link:focus {
-                top: 0; 
-                position: static;
-                background-color: var(--mint);
-                color: var(--purple-inkk);
-            }
+
         </style>
     </head>
 
@@ -133,7 +116,7 @@
                             required>
 
                         <fieldset>
-                            <legend>Gender</legend>
+                            <legend id="secondFieldLegend">Gender</legend>
                                     
                             <input type="radio" id="male" name="gender" value="male" required>
                             <label for="male">Male</label>

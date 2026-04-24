@@ -151,9 +151,41 @@ header nav ul li a:hover {
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0); 
-    clip-path: inset(50%);  
-    white-space: nowrap;    
+    clip-path: inset(50%);     
     border: 0;
+}
+a:hover .sr-only,
+a:focus .sr-only {
+    position: static; 
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    border: auto;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px; 
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--purple-ink);
+    color: white;
+    padding: 10px;
+    z-index: 100; 
+    transition: top 0.3s; 
+}
+.skip-link:focus {
+    overflow: visible;
+    top: 0; 
+    position: static;
+    background-color: var(--mint);
+    color: var(--purple-inkk);
 }
 
 /* Global buttons */
@@ -162,6 +194,7 @@ header nav ul li a:hover {
   background-color: var(--purple-inkk);
   color: var(--white);
   font-weight: 700;
+  font-family: var(--font);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.9rem 3.2rem;
@@ -629,7 +662,7 @@ The end of jobs.html
 /* 
 apply.html styling 
 */
-.applyHeading h1 {
+.applyHeading {
   text-align: center;
   padding: 3.5rem 2rem 3rem;
   margin-bottom: 0;
@@ -644,31 +677,55 @@ apply.html styling
   background-color: var(--purple-inkk);
 }
 
-/* .ctaButton {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
+.applyHeading h1 {
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+}
+
+.shortKeys {
+  background-color: var(--purple-extreme);
+  padding: 0.75rem 2rem;
+  border-bottom: 3px solid var(--peach);
+}
 
 .shortKeys ul, .twoBt{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
   list-style: none;
   margin: 1rem 2rem;
 }
 
 .shortKeys ul li a {
-  color: var(--purple-extreme);
-  font-size: 1rem;
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  color: var(--white-less);
+  border: 1.5px solid var(--purple-lesser);
+  font-size: 0.9rem;
   font-weight: 550;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 20px;
+  transition: background-color 0.2s ease,
+              color            0.2s ease,
+              border-color     0.2s ease;
 }
 
 .shortKeys ul li a:hover, .shortKeys ul li a:focus {
-  color: var(--peach);
-  border-bottom-color: var(--peach);
-  border-bottom: 2px solid var(--peach);
-  background-color: var(--peach-light);
+  background-color: var(--peach);
+  color: var(--purple-inkk);
+  border-color: var(--peach);
+  outline: none;
+}
+
+#application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 820px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
 }
 
 /* Sections of Q/A cards */
@@ -678,20 +735,19 @@ apply.html styling
   border-left: 3px solid var(--purple-light);
   border-radius: 8px;
   padding: 2rem 2.5rem;
-  margin-bottom: 2rem;
+  gap: 1.2rem;
   box-shadow: 0 1px 5px rgba(42, 16, 80, 0.18);
-  transition: box-shadow 0.25s ease,border-left-color 0.25s ease;
 }
 
 .formSection h2 {
-  border-bottom: 2px solid var(--mint);
+    margin-bottom: 1rem;
 }
 
 #job label, input {
   font-size: 1.2rem;
   display: inline-block;
   justify-content: space-between;
-  width: 40%;
+  min-width: auto;
 }
 
 #job div {
@@ -703,6 +759,58 @@ apply.html styling
   display: flex;
   justify-content: right;
 }
+
+
+.formSection fieldset legend {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  background-color: var(--purple-extreme);
+  color: var(--peach);
+  padding: 0.3em 0.9em;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+}
+
+.formSection > fieldset {
+  border: 1.5px solid var(--purple-lesser);
+  border-radius: 6px;
+  padding: 1.4rem 1.5rem 1.2rem;
+  background-color: var(--bg-card-alt);
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: 1rem;
+  row-gap: 0.85rem;
+  align-items: center;
+}
+
+.formSection fieldset fieldset {
+  grid-column: 1 / -1;
+}
+
+#secondFieldLegend {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  background-color: var(--purple-inkk);
+  color: var(--peach);
+  padding: 0.3em 0.9em;
+  border-radius: 4px;
+}
+
+.formSection > fieldset label,
+.formSection fieldset:not(fieldset fieldset) > label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--purple-inkk);
+  letter-spacing: 0.04em;
+  align-self: center;
+  min-width: auto;
+}
+
 
 /* 
 The end of apply.html 
