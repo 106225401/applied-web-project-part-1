@@ -6,7 +6,9 @@
   --purple-lesser:  #c08efa59;
   --purple-dark:    #C08EFA;
   --purple-deeper:  #7B3FBE;
-  --purple-black:   #9669c9;
+  --purple-blue:    #8134df;
+  --purple-gray:    #5d3c85;
+  --purple-black:   #73519aa6;
   --purple-inkk:    #3D1A70;
   --purple-extreme: #2A1050;  
   --peach:          #FCD9BA;
@@ -693,7 +695,6 @@ The End of Job Positions Description Page Styling
 /* 
 Job Application Page Styling
 */
-
 .apply-heading {
   text-align: center;
   padding: 3.5rem 2rem 3rem;
@@ -876,7 +877,6 @@ Job Application Page Styling
 .form-section select:focus {
   border-color: var(--purple-deeper);
   box-shadow: 0 0 0 3px var(--purple-light);
-  outline: none;
 }
 
 /* Valid state — green-tinted border using mint */
@@ -1163,6 +1163,27 @@ Job Application Page Styling
   box-shadow: 0 0 0 3px var(--purple-light);
   outline: none;
 } 
+
+/* Hide it normally */
+.error-text {
+  display: none;
+  grid-column: 1 / -1;
+  color: #e05c5c;
+  font-size: 0.8rem;
+  margin-top: 0rem;
+  margin-bottom: 0.3rem;
+}
+/* .form-section input[type="text"]:user-invalid */
+/* Show it ONLY when invalid */
+input:user-invalid + .error-text {
+    display: block;
+    text-align: right;
+}
+
+#jobref:user-invalid + .error-text {
+    display: block;
+    text-align: left;
+}
 
 /* 
 The end of Job Application Page styling
