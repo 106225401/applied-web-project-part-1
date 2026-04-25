@@ -880,16 +880,16 @@ Job Application Page Styling
 }
 
 /* Valid state — green-tinted border using mint */
-.form-section input[type="text"]:valid:not(:placeholder-shown),
-.form-section input[type="email"]:valid:not(:placeholder-shown),
-.form-section input[type="tel"]:valid:not(:placeholder-shown) {
+.form-section input[type="text"]:user-valid,
+.form-section input[type="email"]:user-valid,
+.form-section input[type="tel"]:user-valid {
   border-color: var(--mint);
 }
 
 /* Invalid state after interaction */
-.form-section input[type="text"]:invalid:not(:placeholder-shown),
-.form-section input[type="email"]:invalid:not(:placeholder-shown),
-.form-section input[type="tel"]:invalid:not(:placeholder-shown) {
+.form-section input[type="text"]:user-invalid,
+.form-section input[type="email"]:user-invalid,
+.form-section input[type="tel"]:user-invalid {
   border-color: #e05c5c;
   box-shadow: 0 2px 0 2px rgba(224, 92, 92, 0.18);
 }
