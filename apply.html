@@ -18,7 +18,12 @@
 
         <!-- Embedded CSS Styling -->
         <style>
-
+            .cta-btn {
+                background-color: var(--purple-extreme);
+                padding: 0.75rem 2rem;
+                border: 1px solid var(--white-less);
+                border-radius: 8px;
+            }
         </style>
     </head>
 
@@ -45,10 +50,10 @@
         </header>
 
         <main id="main">
-            <!-- Hero section: page title and call-to-action -->
+            <!-- Heading: page title and call-to-action -->
             <section class="apply-heading">
                 <h1>Job Application Form</h1>
-                <a href="#application-form" class="cta-button">Apply Now</a>
+                <a href="#application-form" class="cta-btn">Apply Now</a>
             </section>
 
             <nav class="short-keys" aria-label="Job application form sections">
@@ -72,7 +77,7 @@
                         aria-describedby="jobhelp"
                         required>
 
-                    <div id="job-help" style="color: #555555;">
+                    <div id="job-help" style="color: #555555; font-size: 0.9rem;">
                         <p>Available positions:</p>
                         <ul>
                             <li>DLR01 - Digital Learning Support Officer</li>
@@ -120,7 +125,7 @@
                             <input type="radio" id="female" name="gender" value="female">
                             <label for="female">Female</label>
 
-                            <input type="radio" id="prefer_not_to_say" name="gender" value="prefer_not_to_say">
+                            <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
                             <label for="prefer_not_to_say">Prefer not to say</label>
                         </fieldset>
                     </fieldset>
@@ -226,8 +231,8 @@
 
                 <!-- Form submission and reset buttons -->
                 <div class="two-btn">
-                    <button type="submit" id="apply-btn">Apply</button>
-                    <button type="reset" id="reset-btn" >Reset Form</button>
+                    <button type="submit">Apply</button>
+                    <button type="reset">Reset Form</button>
                 </div>
             </form>
         </main>

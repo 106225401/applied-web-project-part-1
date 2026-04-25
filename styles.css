@@ -54,7 +54,7 @@ body {
 h1 {
   font-size: 3.5em;
   color: var(--white);
-  margin-bottom: 1em;
+  margin-bottom: 5em;
 }
 
 h2 {
@@ -188,7 +188,7 @@ a:focus .sr-only {
 }
 
 /* Global buttons */
-.apply-now, #apply-btn, #reset-btn {
+.apply-now, .two-btn button[type="submit"], .two-btn button[type="reset"] {
   display: inline-block;
   background-color: var(--purple-inkk);
   color: var(--white);
@@ -206,7 +206,7 @@ a:focus .sr-only {
               transform       0.15s ease;
 }
  
-.apply-now:hover, .apply-now:focus, #apply-btn:hover, #reset-btn:hover, #apply-btn:focus, #reset-btn:focus {
+.apply-now:hover, .apply-now:focus, .two-btn button[type="submit"]:hover, .two-btn button[type="reset"]:hover, .two-btn button[type="submit"]:focus, .two-btn button[type="reset"]:focus {
   background-color: var(--peach);
   color: var(--purple-inkk);
   border-color: var(--purple-inkk);
@@ -214,8 +214,6 @@ a:focus .sr-only {
   outline: none;
   cursor: pointer;
 }
-
-
 /* 
 About Us Page styling 
 */
@@ -286,7 +284,6 @@ About Us Page styling
   max-width: 650px;
   text-shadow: 2px 1px 6px var(--black);
 }
-
 
 /* General card style for all sections except the first one */
 /* Fix for content alignment */
@@ -516,7 +513,6 @@ main > section:not(:first-child) {
   color: var(--purple-inkk); 
   white-space: nowrap;
 }
-
 /* 
 The End of About Us Page Styling
 */
@@ -596,7 +592,7 @@ Job Positions Description Page Styling
   max-width: 1100px;
   margin: 0 auto;
 }
- 
+
 /* Individual job card */
 .job {
   background-color: var(--bg-card);
@@ -1452,7 +1448,8 @@ footer a:hover, footer a:focus {
   text-decoration: underline;
 }
 
-footer > p {
+.copyright {
+  display: block; /* <small> is inline by default, needs this for clear to work */
   clear: both;
   text-align: center;
   padding: 1.2em 0 1.4em;
