@@ -1036,7 +1036,8 @@ Job Application Page Styling
   font-size: 0.88rem;
   color: var(--black-less);
   line-height: var(--lineHeight);
-  text-align: left;
+
+  justify-self: center !important;
 }
  
 #job-help p {
