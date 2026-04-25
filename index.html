@@ -4,553 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="NextGen Devs - Digital Learning and Innovation (DLI) Department. Building future-ready digital solutions for education and research.">
+    <meta name="keywords" content="nextgen devs, home page, digital learning, innovation, research">
     <meta name="author" content="Afif - NextGen Devs">
     
     <title>NextGen Devs | Home - Digital Learning & Innovation</title>
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
-    
-   
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="another.css">
+
+    <!-- embedded CSS -->
     <style>
-        /* ---------- RESET & GLOBAL (element + grouped selectors) ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        /* Grouped selectors for typography and box sizing */
-        html, body {
-            height: 100%;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* BACKGROUND GRAPHIC using CSS (image + gradient overlay) as required */
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.08"><path fill="%239b6dff" d="M400,80 L600,200 L600,400 L400,520 L200,400 L200,200 Z" /><circle cx="400" cy="300" r="80" fill="%236b46c0"/><path d="M300,500 L500,500 L500,650 L300,650 Z" fill="%237d56d9"/></svg>');
-            background-repeat: repeat;
-            background-position: top left;
-            background-size: 180px;
-            /* fallback + gradient overlay to maintain readability */
-            background-color: #f8f9ff;
-            color: #1e1e2f;
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .content-wrapper {
-            flex: 1;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.92); /* semi-transparent to let background graphic show */
-            border-radius: 2rem 2rem 0 0;
-        }
-
-        /* ---------- HEADER & NAVIGATION (common menu) ---------- */
-        header {
-            background-color: #1e1a3b;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0.75rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        /* ID selector example */
-        #brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-icon {
-            background-color: #9b6dff;
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.6rem;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-
-        /* pseudo-class hover for logo icon */
-        .logo-icon:hover {
-            transform: scale(1.03);
-            background-color: #b794f4;
-        }
-
-        .logo-text {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: white;
-            letter-spacing: -0.3px;
-        }
-
-        .logo-text span {
-            color: #d4c5ff;
-            font-weight: 300;
-        }
-
-        /* navigation menu - list based (contextual + child selectors) */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav ul li a {
-            color: #f0eefc;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.5rem 0;
-            transition: all 0.2s ease;
-            border-bottom: 2px solid transparent;
-        }
-
-        /* pseudo-class focus for accessibility */
-        nav ul li a:focus-visible {
-            outline: 2px solid #b794f4;
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-
-        nav ul li a:hover {
-            color: #d9c8ff;
-            border-bottom-color: #9b6dff;
-        }
-
-        /* attribute selector + pseudo-class for current page */
-        nav ul li a[aria-current="page"] {
-            color: #ffffff;
-            border-bottom-color: #cbb9ff;
-            font-weight: 600;
-            background-color: rgba(155, 109, 255, 0.2);
-            border-radius: 20px;
-            padding: 0.5rem 0.8rem;
-        }
-
-        /* ========== HERO / COMPANY SECTION (class + element selectors) ========== */
-        .hero {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 2rem;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 2.5rem;
-            transition: box-shadow 0.3s;
-        }
-
-        .hero:hover {
-            box-shadow: 0 25px 40px -14px rgba(45, 27, 105, 0.15);
-        }
-
-        .company-info {
-            flex: 2;
-            min-width: 240px;
-        }
-
-        .company-badge {
-            display: inline-block;
-            background: #ede7ff;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #4a2c9e;
-            margin-bottom: 1rem;
-        }
-
-        .company-info h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #2d1b69, #6b46c0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-
-        /* contextual selector: class inside .company-info */
-        .company-info .dept-name {
-            font-size: 1.2rem;
-            color: #4a4a6a;
-            margin-bottom: 1rem;
-            border-left: 4px solid #9b6dff;
-            padding-left: 1rem;
-            font-weight: 500;
-        }
-
-        .slogan {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #1e1a3b;
-            margin: 1rem 0 0.75rem 0;
-        }
-
-        .description {
-            color: #2d2d44;
-            margin: 1rem 0 1.5rem 0;
-            line-height: 1.6;
-        }
-
-        /* grouped selectors for buttons */
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn, .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.5rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .btn {
-            background-color: #2d1b69;
-            color: white;
-            border: none;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #2d1b69;
-            color: #2d1b69;
-        }
-
-        .btn:hover, .btn-outline:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-outline:hover {
-            background: #ede7ff;
-        }
-
-        /* company image area */
-        .company-image {
-            flex: 1;
-            text-align: center;
-            min-width: 180px;
-        }
-
-        .company-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            background: #f5f3ff;
-        }
-
-        .company-image img:hover {
-            transform: scale(1.02);
-        }
-
-        /* ========== CARDS / INSIGHTS (contextual + pseudo) ========== */
-        .insights {
-            display: flex;
-            gap: 1.8rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.8rem;
-            flex: 1;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-            transition: all 0.25s;
-            border: 1px solid #eceaff;
-        }
-
-        /* pseudo-class first-child & last-child */
-        .card:first-child {
-            border-top-left-radius: 2rem;
-        }
-        .card:last-child {
-            border-top-right-radius: 2rem;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.12);
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: #2d1b69;
-        }
-
-        .card p {
-            color: #4a4a6a;
-            line-height: 1.5;
-        }
-
-        /* ========== FOOTER (common across pages) ========== */
-        footer {
-            background-color: #0f0c1f;
-            color: #cbc9e0;
-            padding: 2rem 1rem 1.5rem;
-            margin-top: 2rem;
-            border-top: 1px solid #2a2742;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-            padding: 0 1rem;
-        }
-
-        .footer-col {
-            flex: 1;
-            min-width: 170px;
-        }
-
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-col ul li a {
-            color: #b9b4e6;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        /* focus & hover for footer links */
-        .footer-col ul li a:hover, .footer-col ul li a:focus {
-            color: #d4c5ff;
-            text-decoration: underline;
-        }
-
-        .email-link a {
-            color: #b794f4;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #2a2742;
-            font-size: 0.85rem;
-        }
-
-        /* ===== RESPONSIVE (media queries) ===== */
-        @media (max-width: 780px) {
-            .nav-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .company-info h1 {
-                font-size: 2rem;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .content-wrapper {
-                padding: 1.2rem;
-            }
-        }
-
-        /* accessibility: skip link */
-        .skip-to-content {
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-        .skip-to-content:focus {
-            position: static;
-            width: auto;
-            height: auto;
-            background: #9b6dff;
-            color: white;
-            padding: 0.5rem;
-            text-align: center;
-            z-index: 999;
-        }
     </style>
-    <!-- end of embedded CSS -->
 </head>
 <body>
 
-<!-- Accessibility skip link -->
-<a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <!-- Skip link for keyboard users -->
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- ========== HEADER with common navigation menu (list-based) ========== -->
-<header>
-    <div class="nav-container">
-        <div id="brand-logo">
-            <div class="logo-icon" aria-label="NextGen Devs Logo">NGD</div>
-            <div class="logo-text">NextGen <span>Devs</span></div>
-        </div>
+    <!-- header -->
+    <header>
+        <!-- company logo and common navigation menu -->
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="NextGen Devs logo">
+            <span>NextGen Devs</span>
+        </a>
+
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="jobs.html">Jobs</a></li>
                 <li><a href="apply.html">Apply</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
-    </div>
-</header>
+    </header> 
 
-<main id="main-content" class="content-wrapper">
-    <!-- Company Details: logo, name, slogan, description, image -->
-    <section aria-label="Company introduction">
-        <div class="hero">
-            <div class="company-info">
-                <div class="company-badge">✨ NextGen Innovators</div>
-                <h1>NextGen Devs</h1>
-                <div class="dept-name">📘 Digital Learning and Innovation (DLI) Department</div>
-                <div class="slogan">🚀 Empowering future-ready digital minds</div>
-                <p class="description">
-                    NextGen Devs, under the <strong>Digital Learning and Innovation (DLI) Department</strong>, 
-                    bridges cutting-edge technology with transformative education. We craft immersive digital 
-                    solutions, research-driven platforms, and next-generation learning ecosystems. Our team 
-                    blends creativity with technical excellence to shape the future of digital learning & research.
-                </p>
-                <div class="btn-group">
-                    <a href="jobs.html" class="btn">🌟 Join our team</a>
-                    <a href="about.html" class="btn btn-outline">📖 Learn more</a>
+    <main id="main-content" class="content-wrapper">       
+        <!-- Group Details: logo, name, slogan, description, image -->
+        <section aria-label="Company introduction">
+            <div class="intro-box">
+                <div class="group-info">
+                    <div class="group-badge">✨ NextGen Innovators</div>
+
+                    <h1>NextGen Devs</h1>
+
+                    <div class="dept-name">📘 Digital Learning &amp; Innovation Department</div>
+                    
+                    <div class="btn-group">
+                        <a href="jobs.html" class="job-btn">Join our team</a>
+                        <a href="about.html" class="aboutus-btn">Learn more</a>
+                    </div>
+                </div>
+
+                <div class="logo-img">
+                    <!-- Image from images folder - Logo.png -->
+                    <img src="images/Logo.png" 
+                        alt="NextGen Devs Company Logo - Purple brand symbol"
+                        style="">
+
+                    <p style="font-size: 0.8rem; margin-top: 0.75rem; font-style: italic;">NGD | Driving digital innovation</p>
                 </div>
             </div>
-            <div class="company-image">
-                <!-- Image from images folder - Logo.png -->
-                <img src="images/Logo.png" 
-                     alt="NextGen Devs Company Logo - Purple brand symbol"
-                     style="max-width: 100%; border-radius: 24px; background: #f1edfe; border: 1px solid #ddd;">
-                <!-- inline CSS example: style attribute for caption text -->
-                <p style="font-size: 0.8rem; margin-top: 0.75rem; color: #5b4c8c; font-style: italic;">✨ NGD | Driving digital innovation</p>
+        </section>
+
+        <!-- Intro to our team -->
+        <!-- <section class="our-slogan" aria-labelledby="about-our-slogan">
+            <blockquote>
+                <p>"Code, Create, Conquer"</p>
+                <cite>— NextGen Devs</cite>
+            </blockquote>
+        </section> -->
+
+        <section class="slogan-box" aria-labelledby="slogan-heading">
+            <h2 id="slogan-heading" class="sr-only">Our Slogan</h2>
+            <p class="slogan-text">"Code, Create, Conquer"</p>
+            <cite class="slogan-cite">— NextGen Devs</cite>
+        </section>
+                
+        <!-- Core Values / Insights Section -->
+        <div class="insights">
+            <div class="card">
+                <h3>🎓 Digital Learning & Research</h3>
+                <p>Formerly DLR (Digital Learning and Research) Department, we pioneer interactive modules, AI-driven tutoring, and inclusive EdTech research.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Innovation Lab</h3>
+                <p>Explore prototypes, XR labs, and collaborative projects that reshape how knowledge is built and shared across global classrooms.</p>
+            </div>
+
+            <div class="card">
+                <h3>🤝 Industry Connect</h3>
+                <p>We partner with leading tech companies and academic institutions to deliver real-world impact and career-ready pathways.</p>
             </div>
         </div>
-    </section>
-    
-    <!-- Core Values / Insights Section -->
-    <div class="insights">
-        <div class="card">
-            <h3>🎓 Digital Learning & Research</h3>
-            <p>Formerly DLR (Digital Learning and Research) Department, we pioneer interactive modules, AI-driven tutoring, and inclusive EdTech research.</p>
+        
+        <!-- inline CSS demonstration: additional style block as per requirement (clear inline usage) -->
+        <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem; background: #eae5ff; padding: 1rem; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <span style="font-weight: bold; color: #2d1b69;">📢 NextGen Devs — Home of the Digital Learning and Innovation (DLI) Department</span> 
+            — building tomorrow's intelligent learning ecosystems.
         </div>
-        <div class="card">
-            <h3>⚡ Innovation Lab</h3>
-            <p>Explore prototypes, XR labs, and collaborative projects that reshape how knowledge is built and shared across global classrooms.</p>
-        </div>
-        <div class="card">
-            <h3>🤝 Industry Connect</h3>
-            <p>We partner with leading tech companies and academic institutions to deliver real-world impact and career-ready pathways.</p>
-        </div>
-    </div>
-    
-    <!-- inline CSS demonstration: additional style block as per requirement (clear inline usage) -->
-    <div style="margin-top: 2rem; text-align: center; font-size: 0.9rem; background: #eae5ff; padding: 1rem; border-radius: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <span style="font-weight: bold; color: #2d1b69;">📢 NextGen Devs — Home of the Digital Learning and Innovation (DLI) Department</span> 
-        — building tomorrow's intelligent learning ecosystems.
-    </div>
-</main>
+    </main>
 
-<!-- ========== FOOTER with project links, navigation menu, email contact, copyright ========== -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>NextGen Devs</h4>
-            <p>Innovative digital solutions & research-driven learning experiences.</p>
-            <!-- email contact inline style example -->
-            <div class="email-link" style="margin-top: 0.8rem;">
-                📧 <a href="mailto:info@nextgen.com">info@nextgen.com</a>
-            </div>
-        </div>
-        <div class="footer-col">
-            <h4>Explore</h4>
+    <!-- footer -->
+    <footer>
+        <!-- Project links section -->
+        <section class="footer-section">
+            <h3>Project</h3>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs & Careers</a></li>
-                <li><a href="apply.html">Application Form</a></li>
-                <li><a href="about.html">About DLI Team</a></li>
+                <li><a href="https://github.com/106225401/applied-web-project-part-1" target="_blank">GitHub Repository (Source Code)
+                    <span class="sr-only">(opens in new window)</span>
+                </a></li>
+                <li><a href="https://student-team-cos10026.atlassian.net/jira/software/projects/AWPP1/boards/4" target="_blank">Jira (Project Management)
+                    <span class="sr-only">(opens in new window)</span>
+                </a></li>
             </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Project Resources</h4>
-            <ul>
-                <!-- GitHub and Jira links as required -->
-                <li><a href="https://github.com/106225401/applied-web-project-part-1" target="_blank" rel="noopener noreferrer">🐙 GitHub Repository</a></li>
-                <li><a href="https://student-team-cos10026.atlassian.net/jira/software/projects/AWPP1/boards/4" target="_blank" rel="noopener noreferrer">📊 Our Jira Board</a></li>
-                <li><a href="#">Project Wiki</a></li>
-                <li><a href="#">Sprint Planning</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Legal & Support</h4>
-            <ul>
-                <li><a href="#">Accessibility</a></li>
-                <li><a href="#">Privacy Statement</a></li>
-                <li><a href="mailto:support@nextgen.com">Support Team</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">
-        &copy; 2026 NextGen Devs — Digital Learning and Innovation (DLI) Department. All creative visions forward. 
-        <br>This project is part of applied web development, fully compliant with group task distribution (Afif - Home Page).
-    </div>
-</footer>
+        </section>
 
+        <!-- Navigation menu section -->
+        <section class="footer-section">
+            <h3>Quick Links</h3>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </section>
 
+        <!-- Email contact section -->
+        <section class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@nextgen.com" >info@nextgen.com</a></p>
+        </section>
+
+        <!-- Copyright-->
+        <p>Copyright &copy; 2026 NextGen Devs. All rights reserved.</p>
+    </footer>
 </body>
 </html>

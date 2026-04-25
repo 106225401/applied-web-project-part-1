@@ -46,7 +46,7 @@
         <main id="main">
 
             <!-- Hero section: page title and call-to-action -->
-            <section class="applyHeading">
+            <section class="apply-heading">
                 <h1>Job Application Form</h1>
             </section>
 
@@ -66,16 +66,16 @@
                 action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                 <!-- Position selection section -->
-                <section id="job" class="formSection">
+                <section id="job" class="form-section">
                     <h2>Position to Apply For</h2>
 
-                    <label for="jobref">Job Reference Number:</label>
-                    <input type="text" id="jobref" name="jobref"
+                    <label for="job-ref">Job Reference Number:</label>
+                    <input type="text" id="job-ref" name="job-ref"
                         pattern="^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{5}$"
-                        aria-describedby="jobhelp"
+                        aria-describedby="job-help"
                         required>
 
-                    <div id="jobhelp" style="color: #555555;">
+                    <div id="job-help" style="color: #555555;">
                         <p>Available positions:</p>
                         <ul>
                             <li>DLR01 - Digital Learning Support Officer</li>
@@ -86,7 +86,7 @@
                 </section>
 
                 <!-- Applicant details section -->
-                <section id="applicant-details" class="formSection">
+                <section id="applicant-details" class="form-section">
                     <h2>Applicant Details</h2>
 
                     <fieldset>
@@ -184,7 +184,7 @@
                 </section>
 
                 <!-- Skills selection section -->
-                <section id="skills" class="formSection">
+                <section id="skills" class="form-section">
                     <h2>Professional Skills</h2>
 
                         <input type="checkbox" id="excel" name="skill[]" value="excel" required>
@@ -212,9 +212,9 @@
                 </section>
 
                 <!-- Form submission and reset buttons -->
-                <div class="twoBt">
-                    <button id="applyBt" type="submit">Apply</button>
-                    <button id="resetBt" type="reset">Reset Form</button>
+                <div class="two-btn">
+                    <button id="apply-btn" type="submit">Apply</button>
+                    <button id="reset-btn" type="reset">Reset Form</button>
                 </div>
             </form>
         </main>
