@@ -48,13 +48,13 @@
         </header>
 
         <main id="main">
-            <!-- Hero section: page title and call-to-action -->
-            <section class="hero">
+            <!-- Form heading: page title and call-to-action -->
+            <section class="apply-heading">
                 <h1>Job Application Form</h1>
-                <a href="#application-form" class="cta-button">Apply Now</a>
+                <a href="#application-form" class="cta-btn">Apply Now</a>
             </section>
 
-            <nav aria-label="Job application form sections">
+            <nav class="short-keys" aria-label="Job application form sections">
                 <ul>
                     <li><a href="#job">Job</a></li>
                     <li><a href="#applicant-details">Details</a></li>
@@ -62,7 +62,7 @@
                 </ul>
             </nav>
 
-            <form id="application-form"  aria-labelledby="form-heading"
+            <form id="application-form">
                 action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                 <!-- Position selection section -->
@@ -72,10 +72,10 @@
                     <label for="jobref">Job Reference Number:</label>
                     <input type="text" id="jobref" name="jobref"
                         pattern="^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{5}$"
-                        aria-describedby="jobhelp"
+                        aria-describedby="job-help"
                         required>
 
-                    <div id="jobhelp" style="color: var(--purple-gray);">
+                    <div id="job-help" style="color: var(--purple-gray);">
                         <p>Available positions:</p>
                         <ul>
                             <li>DLR01 - Digital Learning Support Officer</li>
@@ -123,8 +123,8 @@
                             <input type="radio" id="female" name="gender" value="female">
                             <label for="female">Female</label>
 
-                            <input type="radio" id="prefer_not_to_say" name="gender" value="prefer_not_to_say">
-                            <label for="prefer_not_to_say">Prefer not to say</label>
+                            <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
+                            <label for="prefer-not-to-say">Prefer not to say</label>
                         </fieldset>
                     </fieldset>
 
@@ -190,23 +190,35 @@
                     <fieldset>
                         <legend>Skills</legend>
 
-                        <input type="checkbox" id="excel" name="skill[]" value="excel" required>
-                        <label for="excel">Excel</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="excel" name="skill[]" value="excel" required>
+                            <label for="excel">Excel</label>
+                        </div>
 
-                        <input type="checkbox" id="mysql" name="skill[]" value="mysql">
-                        <label for="mysql">MySQL</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="mysql" name="skill[]" value="mysql">
+                            <label for="mysql">MySQL</label>
+                        </div>
 
-                        <input type="checkbox" id="python" name="skill[]" value="python">
-                        <label for="python">Python</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="python" name="skill[]" value="python">
+                            <label for="python">Python</label>
+                        </div>
 
-                        <input type="checkbox" id="java" name="skill[]" value="java">
-                        <label for="java">Java</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="java" name="skill[]" value="java">
+                            <label for="java">Java</label>
+                        </div>
 
-                        <input type="checkbox" id="spss" name="skill[]" value="spss">
-                        <label for="spss">SPSS</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="spss" name="skill[]" value="spss">
+                            <label for="spss">SPSS</label>
+                        </div>
 
-                        <input type="checkbox" id="other" name="skill[]" value="other">
-                        <label for="other">Other skills…</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="other" name="skill[]" value="other">
+                            <label for="other">Other skills…</label>
+                        </div>
 
                         <label for="others">Other Skills</label>
                         <textarea id="others" name="others"
@@ -216,8 +228,10 @@
                 </section>
 
                 <!-- Form submission and reset buttons -->
-                <button type="submit">Apply</button>
-                <button type="reset">Reset Form</button>
+                <div class="two-btn">
+                    <button type="submit">Apply</button>
+                    <button type="reset">Reset Form</button>
+                </div>
             </form>
         </main>
 
