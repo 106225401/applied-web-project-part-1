@@ -25,61 +25,62 @@
             }
         </style>
     </head>
-    <body>
-        <!-- Skip link for keyboard users -->
-        <a href="#main" class="skip-link">Skip to main content</a>
-        <!-- header -->
-        <header>
-            <!-- company logo and common navigation menu -->
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="NextGen Devs logo">
-                <span>NextGen Devs</span>
-            </a>
+<body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <!-- header -->
+    <header>
+        <!-- company logo and common navigation menu -->
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="NextGen Devs logo">
+            <span>NextGen Devs</span>
+        </a>
 
-            <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="jobs-main">
+        <h1 class="jobs-heading">Available Job Positions</h1>
+        
+        <div aria-label="Job Positions Descritpion Anchor Links" class="short-keys">
+            <nav aria-label="Job application form sections">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
-                    <li><a href="apply.html">Apply</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#digital">Digital Learning</a></li>
+                    <li><a href="#admin">LMS Admin</a></li>
+                    <li><a href="#research">Research</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+        
+        <!-- a side note about benefits -->
+        <aside class="job-aside">
+            <h2>Benefits</h2>
+            <ul>
+                <li>
+                    Flexible working hours
+                </li>
+                <li>
+                    Professional development opportunities
+                </li>
+                <li>
+                    University staff discounts
+                </li>
+                <li>
+                    Access to research tools and systems
+                </li>
+            </ul>
+        </aside>
 
-        <main id="jobs-main">
-            <h1 class="jobs-heading">Available Job Positions</h1>
+        <div class="available-jobs">
             
-            <div aria-label="Job Positions Descritpion Anchor Links" class="short-keys">
-                <nav aria-label="Job application form sections">
-                    <ul>
-                        <li><a href=".job">Job</a></li>
-                        <li><a href="#applicant-details">Details</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <!-- a side note about benefits -->
-            <aside class="job-aside">
-                <h2>Benefits</h2>
-                <ul>
-                    <li>
-                        Flexible working hours
-                    </li>
-                    <li>
-                        Professional development opportunities
-                    </li>
-                    <li>
-                        University staff discounts
-                    </li>
-                    <li>
-                        Access to research tools and systems
-                    </li>
-                </ul>
-            </aside>
-
-            <div class="available-jobs">
-                <section class="job">
+            <section id="digital" class="job">
                 <h2>
                     Digital Learning Support Officer
                 </h2>
@@ -163,7 +164,8 @@
                     <a href="apply.html" class="apply-now" style="font-size:large">Apply Now</a>
                 </div>
             </section>
-            <section class="job">
+
+            <section id="admin" class="job">
                 <h2>Learning Management System (LMS) Administrator</h2>
                 <h3>
                     Reference Number: LMS02
@@ -237,7 +239,8 @@
                     <a href="apply.html" class="apply-now" style="font-size:large">Apply Now</a>
                 </div>
             </section>
-            <section class="job">
+
+            <section id="research" class="job">
                 <h2>
                     Research Technology Assistant
                 </h2>
@@ -313,7 +316,7 @@
                     <a href="apply.html" class="apply-now" style="font-size:large">Apply Now</a>
                 </div>
             </section>
-            </div>
+        </div>
     </main>
 
     <footer>

@@ -3,20 +3,20 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <meta charset="utf-8">
-
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Apply for positions in the Digital Learning and Innovation (DLI) Department at NextGen Devs University.">
         <meta name="keywords" content="university jobs, job application, IT careers, digital learning, innovation, research">
         <meta name="author" content="Jingyee">
 
+        <!-- Tab bar: title and icon -->
         <title>Job Application</title>
         <link rel="icon" type="image/x-icon" href="images/logo.ico">
 
+        <!-- Link to external CSS -->
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="another.css">
 
-        <!-- Embedded CSS for UI Styling -->
+        <!-- Embedded CSS Styling -->
         <style>
 
         </style>
@@ -27,12 +27,13 @@
         <a href="#main" class="skip-link">Skip to main content</a>
 
         <header>
-            <!-- company logo and common navigation menu -->
+            <!-- Top bar logo -->
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="NextGen Devs logo">
+                <img src="images/logo.png" alt="NextGen Devs logo" loading="eager">
                 <span>NextGen Devs</span>
             </a>
 
+            <!-- Common navigation menu -->
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -44,23 +45,19 @@
         </header>
 
         <main id="main">
-
             <!-- Hero section: page title and call-to-action -->
             <section class="apply-heading">
                 <h1>Job Application Form</h1>
+                <a href="#application-form" class="cta-button">Apply Now</a>
             </section>
 
-            <!-- <h2 id="form-heading">Application Form</h2> -->
-            <div aria-label="Job Application Form Anchor Links" class="short-keys">
-                    <nav>
-                        <ul>
-                            <li><a href="#application-form">Apply Now</a></li>
-                            <li><a href="#job">Job</a></li>
-                            <li><a href="#applicant-details">Details</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                        </ul>
-                    </nav>
-            </div>
+            <nav class="short-keys" aria-label="Job application form sections">
+                <ul>
+                    <li><a href="#job">Job</a></li>
+                    <li><a href="#applicant-details">Details</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
 
             <form id="application-form"  aria-labelledby="form-heading"
                 action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
@@ -69,10 +66,10 @@
                 <section id="job" class="form-section">
                     <h2>Position to Apply For</h2>
 
-                    <label for="job-ref">Job Reference Number:</label>
-                    <input type="text" id="job-ref" name="job-ref"
+                    <label for="jobref">Job Reference Number:</label>
+                    <input type="text" id="jobref" name="jobref"
                         pattern="^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{5}$"
-                        aria-describedby="job-help"
+                        aria-describedby="jobhelp"
                         required>
 
                     <div id="job-help" style="color: #555555;">
@@ -92,15 +89,15 @@
                     <fieldset>
                         <legend>Personal Information</legend>
 
-                        <label for="fName">First Name:</label>
-                        <input type="text" id="fName" name="fName"
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname"
                             autocomplete="given-name"
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
                             required>
 
-                        <label for="lName">Last Name:</label>
-                        <input type="text" id="lName" name="lName"
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname"
                             autocomplete="family-name"
                             pattern="[A-Za-z ]{1,20}" maxlength="20"
                             title="Format: max 20 alpha characters"
@@ -115,7 +112,7 @@
                             required>
 
                         <fieldset>
-                            <legend id="secondFieldLegend">Gender</legend>
+                            <legend>Gender</legend>
                                     
                             <input type="radio" id="male" name="gender" value="male" required>
                             <label for="male">Male</label>
@@ -187,73 +184,95 @@
                 <section id="skills" class="form-section">
                     <h2>Professional Skills</h2>
 
-                        <input type="checkbox" id="excel" name="skill[]" value="excel" required>
-                        <label for="excel">Excel</label>
+                    <fieldset>
+                        <legend>Skills</legend>
 
-                        <input type="checkbox" id="mysql" name="skill[]" value="mysql">
-                        <label for="mysql">MySQL</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="excel" name="skill[]" value="excel" required>
+                            <label for="excel">Excel</label>
+                        </div>
 
-                        <input type="checkbox" id="python" name="skill[]" value="python">
-                        <label for="python">Python</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="mysql" name="skill[]" value="mysql">
+                            <label for="mysql">MySQL</label>
+                        </div>
 
-                        <input type="checkbox" id="java" name="skill[]" value="java">
-                        <label for="java">Java</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="python" name="skill[]" value="python">
+                            <label for="python">Python</label>
+                        </div>
 
-                        <input type="checkbox" id="spss" name="skill[]" value="spss">
-                        <label for="spss">SPSS</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="java" name="skill[]" value="java">
+                            <label for="java">Java</label>
+                        </div>
 
-                        <input type="checkbox" id="other" name="skill[]" value="other">
-                        <label for="other">Other skills</label>
+                        <div class="skill-item">
+                            <input type="checkbox" id="spss" name="skill[]" value="spss">
+                            <label for="spss">SPSS</label>
+                        </div>
+
+                        <div class="skill-item">
+                            <input type="checkbox" id="other" name="skill[]" value="other">
+                            <label for="other">Other skills…</label>
+                        </div>
 
                         <label for="others">Other Skills</label>
                         <textarea id="others" name="others"
                             placeholder="Write your other skills here..."
                             rows="5" cols="50"></textarea>
+                    </fieldset>
                 </section>
 
                 <!-- Form submission and reset buttons -->
                 <div class="two-btn">
-                    <button id="apply-btn" type="submit">Apply</button>
-                    <button id="reset-btn" type="reset">Reset Form</button>
+                    <button type="submit" id="apply-btn">Apply</button>
+                    <button type="reset" id="reset-btn" >Reset Form</button>
                 </div>
             </form>
         </main>
 
-    <footer>
-        <!-- Project links section -->
-        <section class="footer-section">
-            <h3>Project</h3>
-            <ul>
-                <li><a href="https://github.com/106225401/applied-web-project-part-1" target="_blank">GitHub Repository (Source Code)
-                    <span class="sr-only">(opens in new window)</span>
-                </a></li>
-                <li><a href="https://student-team-cos10026.atlassian.net/jira/software/projects/AWPP1/boards/4" target="_blank">Jira (Project Management)
-                    <span class="sr-only">(opens in new window)</span>
-                </a></li>
-            </ul>
-        </section>
-
-        <!-- Navigation menu section -->
-        <section class="footer-section">
-            <h3>Quick Links</h3>
-            <nav aria-label="Footer navigation">
+        <footer>
+            <!-- Project links section -->
+            <section class="footer-section">
+                <h3>Project Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
-                    <li><a href="apply.html">Apply</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li>
+                        <a href="https://github.com/106225401/applied-web-project-part-1" target="_blank" rel="noopener">
+                            GitHub Repository (Source Code)
+                            <span class="sr-only">(opens in new window)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://student-team-cos10026.atlassian.net/jira/software/projects/AWPP1/boards/4" target="_blank" rel="noopener">
+                            Jira (Project Management)
+                            <span class="sr-only">(opens in new window)</span>
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-        </section>
+            </section>
 
-        <!-- Email contact section -->
-        <section class="footer-section">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:info@nextgen.com" >info@nextgen.com</a></p>
-        </section>
+            <!-- Navigation menu section -->
+            <section class="footer-section">
+                <h3>Quick Links</h3>
+                <nav aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="apply.html">Apply</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </nav>
+            </section>
 
-        <!-- Copyright-->
-        <p>Copyright &copy; 2026 NextGen Devs. All rights reserved.</p>
-    </footer>
+            <!-- Email contact section -->
+            <section class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@nextgen.com" >info@nextgen.com</a></p>
+            </section>
+
+            <!-- Copyright-->
+            <small class="copyright">Copyright &copy; 2026 NextGen Devs. All rights reserved.</small>
+        </footer>
     </body>
 </html>
