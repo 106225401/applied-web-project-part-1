@@ -1036,6 +1036,7 @@ Job Application Page Styling
   font-size: 0.88rem;
   color: var(--black-less);
   line-height: var(--lineHeight);
+  text-align: left;
 }
  
 #job-help p {
@@ -1050,6 +1051,7 @@ Job Application Page Styling
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  align-items: flex-start;
 }
  
 #job-help ul li {
