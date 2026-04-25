@@ -50,7 +50,7 @@
         <main id="main">
             <!-- Form heading: page title and call-to-action -->
             <section class="apply-heading">
-                <h1>Job Application Form</h1>
+                <h1 id="apply-title">Job Application Form</h1>
                 <a href="#application-form" class="cta-btn">Apply Now</a>
             </section>
 
@@ -62,12 +62,12 @@
                 </ul>
             </nav>
 
-            <form id="application-form">
+            <form id="application-form" aria-labelledby="apply-title"
                 action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
 
                 <!-- Position selection section -->
-                <section id="job" class="form-section">
-                    <h2>Position to Apply For</h2>
+                <section id="job" class="form-section" aria-labelledby="job-title">
+                    <h2 id="job-title">Position to Apply For</h2>
 
                     <label for="jobref">Job Reference Number:</label>
                     <input type="text" id="jobref" name="jobref"
@@ -86,8 +86,8 @@
                 </section>
 
                 <!-- Applicant details section -->
-                <section id="applicant-details" class="form-section">
-                    <h2>Applicant Details</h2>
+                <section id="applicant-details" class="form-section" aria-labelledby="details-title">
+                    <h2 id="details-title">Applicant Details</h2>
 
                     <fieldset>
                         <legend>Personal Information</legend>
@@ -184,8 +184,8 @@
                 </section>
 
                 <!-- Skills selection section -->
-                <section id="skills" class="form-section">
-                    <h2>Professional Skills</h2>
+                <section id="skills" class="form-section" aria-labelledby="skills-title">
+                    <h2 id="skills-title">Professional Skills</h2>
 
                     <fieldset>
                         <legend>Skills</legend>
@@ -237,8 +237,8 @@
 
         <footer>
             <!-- Project links section -->
-            <section class="footer-section">
-                <h3>Project Links</h3>
+            <section class="footer-section"  aria-labelledby="project-links-title">
+                <h3 id="project-links-title">Project Links</h3>
                 <ul>
                     <li>
                         <a href="https://github.com/106225401/applied-web-project-part-1" target="_blank" rel="noopener">
@@ -256,8 +256,8 @@
             </section>
 
             <!-- Navigation menu section -->
-            <section class="footer-section">
-                <h3>Quick Links</h3>
+            <section class="footer-section" aria-labelledby="quick-links-title">
+                <h3 id="quick-links-title">Quick Links</h3>
                 <nav aria-label="Footer navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -269,8 +269,8 @@
             </section>
 
             <!-- Email contact section -->
-            <section class="footer-section">
-                <h3>Contact Us</h3>
+            <section class="footer-section" aria-labelledby="contact-us-title">
+                <h3 id="contact-us-title">Contact Us</h3>
                 <p>Email: <a href="mailto:info@nextgen.com" >info@nextgen.com</a></p>
             </section>
 
