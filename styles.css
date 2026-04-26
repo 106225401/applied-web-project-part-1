@@ -836,12 +836,13 @@ Job Application Page Styling
   color: var(--purple-inkk);
 
   display: inline-block;
-  width: 35%;
+  width: 32%;
+  text-align: center;
 }
 
 #jobref {
   display: inline-block;
-  width: 60%;
+  width: 65%;
   box-sizing: border-box;
 
   flex-wrap: nowrap;
