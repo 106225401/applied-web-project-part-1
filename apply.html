@@ -18,26 +18,27 @@
 
         <!-- Embedded CSS styling -->
         <style>
+            /* Global Text Selection Style */
             ::selection {
                 background: var(--purple-inkk);
                 color: white;
             }
 
-            .cta-btn {
-                background-color: var(--purple-extreme);
-                padding: 0.75rem 2rem;
-                border: 1px solid var(--white-less);
-                border-radius: 8px;
-                display: inline-block;
-                margin-top: 2rem;
+            /* Job Help Link Interaction */
+            #job-help a {
                 font-weight: bold;
+                font-size: 0.8rem;
+                color: inherit;
+                text-decoration: none;
             }
 
-            .cta-btn:hover {
-                background-color: var(--peach);
-                color: var(--purple-extreme);
-                font-weight: bold;
+            #job-help a:hover {
+                color: var(--purple-blue);
+                text-decoration: underline;
             }
+
+            /* Job Help List Item Sizing */
+            #job-help ul li { font-size: 0.75rem; }
         </style>
     </head>
 
@@ -93,7 +94,7 @@
                     <span class="error-text">Please enter a valid job reference number (refer to the available positions).</span>
 
                     <div id="job-help" style="color: var(--purple-gray);">
-                        <p><a href="jobs.html">Available positions:</a></p>
+                        <a href="jobs.html">Available positions:</a>
                         <ul>
                             <li>DLR01 - Digital Learning Support Officer</li>
                             <li>LMS02 - Learning Management System (LMS) Administrator</li>
@@ -136,15 +137,21 @@
 
                         <fieldset>
                             <legend>Gender</legend>
-                                    
-                            <input type="radio" id="male" name="gender" value="male" required>
-                            <label for="male">Male</label>
 
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Female</label>
+                            <div>
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
 
-                            <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
-                            <label for="prefer-not-to-say">Prefer not to say</label>
+                            <div>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="prefer-not-to-say" name="gender" value="prefer-not-to-say">
+                                <label for="prefer-not-to-say">Prefer not to say</label>
+                            </div>
 
                             <span class="error-text">Please select a gender option.</span>
                         </fieldset>
