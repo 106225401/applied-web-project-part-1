@@ -712,8 +712,21 @@ Job Positions Description Page Styling
   margin-bottom: 0.3rem;
 }
  
+/* Sub-section headings (Salary, Short Desc,...) */
+.job h3:not(.ref-no) {
+  font-size: 0.90rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-inkk);
+  border-bottom: 1.5px solid var(--peach);
+  padding-bottom: 0.3rem;
+  margin-top: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
 /* Reference Number heading */
-.job h3 {
+.ref-no {
   display: inline-block;
   font-size: 0.95rem;
   font-weight: 600;
@@ -724,19 +737,6 @@ Job Positions Description Page Styling
   padding: 0.5em 0.9em;
   border-radius: 10px;
   margin-bottom: 1.4rem;
-}
- 
-/* Sub-section headings (Salary, Short Desc,...) */
-.job h4 {
-  font-size: 0.90rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--purple-inkk);
-  border-bottom: 1.5px solid var(--peach);
-  padding-bottom: 0.3rem;
-  margin-top: 1.3rem;
-  margin-bottom: 0.6rem;
 }
  
 /* Short description */
@@ -855,6 +855,7 @@ Job Application Page Styling
   display: flex;
   align-items: center;
   width: 100%;
+  gap: 1.5rem;
 }
 
 #job-help p {
