@@ -15,6 +15,7 @@
   --peach-light:    #fac08e14;
   --mint:           #BAFCD9;
   --mint-light:     #8efac01f;
+  --mint-dark:      #e3f5ec;
   --white:          #FFFFFF;
   --white-less:     #e6e6e6e6;
   --black:          #000000;
@@ -53,6 +54,11 @@ body {
   color: var(--purple-inkk);
 }
 
+main {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 h1 {
   font-size: 3.5em;
   color: var(--white);
@@ -83,6 +89,7 @@ a:hover {
   outline: none;
 }
 
+/* styling the general navigation bar for all pages */
 header {
   background-color: var(--bg-page);
   padding: 20px 30px;
@@ -138,6 +145,25 @@ header nav ul li a:hover {
   background-color: var(--peach-light);
 }
 
+/* Styling for common Heading  */
+.jobs-heading, .apply-heading, .our-slogan {
+  text-align: center;
+  padding: 3.5rem 2rem 3rem;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  
+  /* 160degree inclined gradient */
+  background-image: linear-gradient(
+    160deg,
+    rgba(42,  16,  80, 0.92) 0%,
+    rgba(61,  26, 112, 0.78) 45%,
+    rgba(123, 63, 190, 0.85) 75%,
+    rgba(42,  16,  80, 0.95) 100%
+  );
+  background-color: var(--purple-inkk);
+}
+
+/* accessibility message pop-up when focused on the link */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -145,7 +171,6 @@ header nav ul li a:hover {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0); 
     clip-path: inset(50%);     
     border: 0;
 }
@@ -154,14 +179,12 @@ a:focus .sr-only {
     position: static; 
     width: auto;
     height: auto;
-    padding: auto;
     margin: auto;
     overflow: visible;
-    clip: auto;
     clip-path: none;
-    border: auto;
 }
 
+/* styling for a jump link to main content */
 .skip-link {
     /* layout */
     position: absolute;
@@ -187,6 +210,44 @@ a:focus .sr-only {
     transform: translateY(0);
     opacity: 1;
     outline: 2px solid #3D1A70;
+}
+
+/* a mini navigation section under page title for Position-description-page and jobs-application-page */
+.short-keys {
+  background-color: var(--purple-extreme);
+  padding: 0.75rem 2rem;
+  border-bottom: 3px solid var(--peach);
+}
+
+.short-keys ul, .two-btn{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 1rem 2rem;
+}
+
+.short-keys ul li a {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  color: var(--white-less);
+  border: 1.5px solid var(--purple-lesser);
+  font-size: 0.9rem;
+  font-weight: 550;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 20px;
+  transition: background-color 0.2s ease,
+              color            0.2s ease,
+              border-color     0.2s ease;
+}
+
+.short-keys ul li a:hover, .short-keys ul li a:focus {
+  background-color: var(--peach);
+  color: var(--purple-inkk);
+  border-color: var(--peach);
+  outline: none;
 }
 
 /* Global buttons */
@@ -217,7 +278,7 @@ a:focus .sr-only {
   cursor: pointer;
 }
 
-/* Global Footer for all HTML files styling */
+/* Global Footer styling for all pages */
 footer {
   background-color: var(--bg-footer); 
   color: #E8D5FF;
@@ -294,20 +355,6 @@ About Us Page styling
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 3em 2em 3em;
-  overflow: hidden;
-
-  /* 160degree inclined gradient */
-  background-image: linear-gradient(
-    160deg,
-    rgba(42,  16,  80, 0.88) 0%,
-    rgba(61,  26, 112, 0.72) 45%,
-    rgba(123, 63, 190, 0.80) 75%,
-    rgba(42,  16,  80, 0.90) 100%
-  );
-  
-  background-color: var(--purple-dark);
 }
 
 .our-slogan h1 {
@@ -327,8 +374,8 @@ About Us Page styling
 }
 
 .our-slogan blockquote p {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: bold;
   color: var(--white);
   letter-spacing: 0.15rem;
   text-shadow: 3px 2px 10px var(--black);
@@ -355,12 +402,6 @@ About Us Page styling
 }
 
 /* General card style for all sections except the first one */
-/* Fix for content alignment */
-main {
-    width: 100%;
-    box-sizing: border-box;
-}
-
 main > section:not(:first-child) {
   background-color: var(--bg-card);
   margin: 2rem auto;
@@ -447,7 +488,7 @@ main > section:not(:first-child) {
   color: var(--purple-inkk);
   margin-bottom: 1.2rem;
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 .contribution dd blockquote p:nth-child(2) {
@@ -465,8 +506,7 @@ main > section:not(:first-child) {
   font-weight: 600;
 }
 
-/* Group Photo */
-/* Optimized Pure CSS Image Gallery */
+/* Group Photo using grid */
 .gallery {
   display: grid;
   max-width: 700px;
@@ -477,9 +517,10 @@ main > section:not(:first-child) {
 .gallery figure {
   grid-area: 1 / 1; 
   opacity: 0;
-  pointer-events: none; /* Ignore clicks when invisible */
+  
+  /* Ignore clicks when invisible */
+  pointer-events: none; 
   transition: opacity 0.3s ease;
-  margin: 0; 
 }
 
 .gallery label {
@@ -492,8 +533,9 @@ main > section:not(:first-child) {
 #img2:checked ~ .gallery .pic2,
 #img3:checked ~ .gallery .pic3 {
   opacity: 1;
-  pointer-events: auto; /* Re-enable clicks */
-  z-index: 1;
+  
+  /* Re-enable clicks */
+  pointer-events: auto; 
 }
 
 .gp-pic figure img {
@@ -590,21 +632,6 @@ The End of About Us Page Styling
 /* 
 Job Positions Description Page Styling 
 */
-.jobs-heading {
-  text-align: center;
-  padding: 3.5rem 2rem 3rem;
-  margin-bottom: 0;
-  letter-spacing: 0.08em;
-  background-image: linear-gradient(
-    160deg,
-    rgba(42,  16,  80, 0.92) 0%,
-    rgba(61,  26, 112, 0.78) 45%,
-    rgba(123, 63, 190, 0.85) 75%,
-    rgba(42,  16,  80, 0.95) 100%
-  );
-  background-color: var(--purple-inkk);
-}
- 
 /* Benefits aside */
 .job-aside {
   float: right;
@@ -612,6 +639,7 @@ Job Positions Description Page Styling
   position: sticky;
   top: 0;
   overflow: auto;
+
   background-color: var(--purple-inkk);
   border-left: 5px solid var(--peach);
   border-radius: 0 8px 8px 0;
@@ -625,9 +653,9 @@ Job Positions Description Page Styling
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--peach);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+  color: var(--peach);
 }
  
 .job-aside ul {
@@ -698,7 +726,7 @@ Job Positions Description Page Styling
   margin-bottom: 1.4rem;
 }
  
-/* Sub-section headings (Salary, Responsibilities…) */
+/* Sub-section headings (Salary, Short Desc,...) */
 .job h4 {
   font-size: 0.90rem;
   font-weight: 800;
@@ -729,19 +757,11 @@ Job Positions Description Page Styling
   margin-bottom: 0.5rem;
 }
  
-.job ul {
-  list-style: disc;
-}
- 
-.job ol {
-  list-style: decimal;
-}
- 
 .job li {
   font-size: 0.93rem;
   color: var(--purple-extreme);
   margin-bottom: 0.35rem;
-  line-height: var(--lineHeight);
+  line-height: 1.8rem;
 }
  
 .job ol li::marker {
@@ -762,80 +782,29 @@ The End of Job Positions Description Page Styling
 /* 
 Job Application Page Styling
 */
-.apply-heading {
-  text-align: center;
-  padding: 3.5rem 2rem 3rem;
-  margin-bottom: 0;
-  letter-spacing: 0.08em;
-  background-image: linear-gradient(
-    160deg,
-    rgba(42,  16,  80, 0.92) 0%,
-    rgba(61,  26, 112, 0.78) 45%,
-    rgba(123, 63, 190, 0.85) 75%,
-    rgba(42,  16,  80, 0.95) 100%
-  );
-  background-color: var(--purple-inkk);
-}
-
 .apply-heading h1 {
   margin-bottom: 0;
   letter-spacing: 0.08em;
 }
 
-.short-keys {
-  background-color: var(--purple-extreme);
-  padding: 0.75rem 2rem;
-  border-bottom: 3px solid var(--peach);
-}
-
-.short-keys ul, .two-btn{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.4rem;
-  list-style: none;
-  margin: 1rem 2rem;
-}
-
-.short-keys ul li a {
-  display: inline-block;
-  padding: 0.4rem 1.2rem;
-  color: var(--white-less);
-  border: 1.5px solid var(--purple-lesser);
-  font-size: 0.9rem;
-  font-weight: 550;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  border-radius: 20px;
-  transition: background-color 0.2s ease,
-              color            0.2s ease,
-              border-color     0.2s ease;
-}
-
-.short-keys ul li a:hover, .short-keys ul li a:focus {
-  background-color: var(--peach);
-  color: var(--purple-inkk);
-  border-color: var(--peach);
-  outline: none;
-}
-
+/* form container */
 #application-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   max-width: 1100px;
   margin: 2rem auto 3rem;
   padding: 0 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Sections of Q/A cards */
+/* Sections of Question cards */
 .form-section {
   background-color: var(--bg-card-alt);
   border-top: 5px solid var(--purple-dark);
   border-left: 3px solid var(--purple-light);
   border-radius: 8px;
   padding: 2rem 2.5rem;
-  gap: 1.2rem;
   box-shadow: 0 1px 5px rgba(42, 16, 80, 0.18);
 }
 
@@ -843,85 +812,160 @@ Job Application Page Styling
     margin-bottom: 1rem;
 }
 
-#job label, input {
-  font-size: 1.2rem;
+/* Label in the job section */
+#job label {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: var(--purple-inkk);
+
   display: inline-block;
-  justify-content: space-between;
-  min-width: auto;
+  width: 35%;
 }
 
+#jobref {
+  display: inline-block;
+  width: 60%;
+  box-sizing: border-box;
+
+  flex-wrap: nowrap;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  letter-spacing: var(--letterSpace);
+  line-height: var(--lineHeight);
+  color: var(--purple-inkk);
+  background-color: var(--white);
+  border: 1.5px solid var(--purple-lesser);
+  border-radius: 5px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#job label, #jobref {
+  vertical-align: middle;
+}
+
+/* available positions container */
 #job div {
   margin-top: 1rem;
   padding: 0.6rem;
   border-left: 5px solid var(--mint);
-  background-color: var(--mint-light);
+  background-color: var(--mint-dark);
   border-radius: 0 8px 8px 0;
+
   display: flex;
-  justify-content: right;
+  align-items: center;
+  width: 100%;
 }
 
-.form-section fieldset legend {
-  font-size: 0.78rem;
-  font-weight: bolder;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  background-color: var(--purple-extreme);
-  color: var(--peach);
-  padding: 0.3em 0.9em;
-  border-radius: 4px;
-  margin-bottom: 0.4rem;
+#job-help p {
+  font-weight: bold;
+  color: var(--purple-dark);
+}
+ 
+#job-help ul {
+  list-style: none;
+}
+ 
+#job-help ul li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.86rem;
+}
+ 
+#job-help ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--purple-deeper);
 }
 
+/* Applicant Details and Skills sections */
 .form-section > fieldset {
   border: 1.5px solid var(--purple-lesser);
   border-radius: 6px;
   padding: 1.4rem 1.5rem 1.2rem;
   background-color: var(--bg-card-alt);
   margin-bottom: 1rem;
+  
   display: grid;
-  grid-template-columns: 180px 1fr;
-  column-gap: 1rem;
-  row-gap: 0.85rem;
+  grid-template-columns: auto 1fr;
+  gap: 2rem 1.5rem;
   align-items: center;
+  justify-content: left;
 }
 
+/* Gender fieldset container */
 .form-section fieldset fieldset {
   grid-column: 1 / -1;
   border: 1.5px solid var(--purple-light);
   border-radius: 5px;
-  padding: 0.9rem 1.2rem;
+  padding: 1.5rem 3rem;
   background-color: var(--bg-card);
  
-  /* Override the outer grid */
+  /* Override the outer grid with flexbox */
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   align-items: center;
-  gap: 0.5rem 1.8rem;
+  justify-content: center;
+  justify-self: center;
+  gap: 1rem 1.8rem;
+}
+
+.form-section fieldset legend, #applicant-details fieldset fieldset legend {
+  font-size: 0.9rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.3em 0.9em;
+  border-radius: 5px;
+  background-color: var(--purple-extreme);
+  color: var(--peach);
 }
 
 #applicant-details fieldset fieldset legend {
-  font-size: 0.75rem;
-  font-weight: bolder;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: var(--white);
+  font-size: 0.85rem;
   background-color: var(--black-less);
-  padding: 0.3em 0.9em;
-  border-radius: 4px;
+  color: var(--white);
 }
 
-.form-section > fieldset label,
-.form-section fieldset:not(fieldset fieldset) > label {
+.form-section > fieldset label:not(label[for = "others"]) {
   font-size: 0.88rem;
   font-weight: bold;
+  letter-spacing: var(--letterSpace);
+  text-align: right;
   color: var(--purple-inkk);
-  letter-spacing: 0.04em;
-  align-self: center;
-  min-width: auto;
+}
+
+.form-section > fieldset label[for = "others"] {
+  font-size: 0.88rem;
+  font-weight: bold;
+  letter-spacing: var(--letterSpace);
+  color: var(--purple-inkk);
+}
+
+.form-section fieldset fieldset div label {
+  font-size: 0.88rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  color: var(--purple-inkk);  
+}
+
+/* Radio input */
+.form-section input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--purple-deeper);
 }
 
 /* ── Text inputs & select in the grid ── */
-.form-section input[type="text"],
+.form-section input[type="text"]:not(#jobref),
 .form-section input[type="email"],
 .form-section input[type="tel"],
 .form-section select {
@@ -929,12 +973,12 @@ Job Application Page Styling
   padding: 0.55rem 0.8rem;
   font-family: var(--font);
   font-size: 0.9rem;
+  letter-spacing: var(--letterSpace);
+  line-height: var(--lineHeight);
   color: var(--purple-inkk);
   background-color: var(--white);
   border: 1.5px solid var(--purple-lesser);
   border-radius: 5px;
-  letter-spacing: var(--letterSpace);
-  line-height: var(--lineHeight);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -961,178 +1005,10 @@ Job Application Page Styling
   box-shadow: 0 2px 0 2px rgba(224, 92, 92, 0.18);
 }
 
-/* pointer appearance */
+/* pointer appearance at select input */
 .form-section select {
-  background-repeat: no-repeat;
-  background-position: right 0.8rem center;
   padding-right: 2.2rem;
   cursor: pointer;
-}
-
-/* Inner legend (Gender) */
-.form-section fieldset fieldset > legend {
-  font-size: 0.76rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--purple-deeper);
-  background-color: transparent;
-  padding: 0 0.4em;
-  border-radius: 0;
-  margin-bottom: 0.3rem;
-  /* Make legend flow inside the flex container */
-  flex-basis: 100%;
-}
- 
-/* Radio input */
-.form-section input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--purple-deeper);
-  cursor: pointer;
-  flex-shrink: 0;
-}
- 
-/* Radio label — inline, tight to its input */
-.form-section fieldset fieldset label {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--purple-inkk);
-  cursor: pointer;
-  margin-right: 0.4rem;
-  /* Reset grid alignment from outer fieldset */
-  align-self: auto;
-}
-
-#job .form-section {
-  /* Override flex to grid so label|input align in 2 columns */
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  column-gap: 1rem;
-  row-gap: 0.85rem;
-  align-items: start;
-}
- 
-/* h2 and div#jobhelp span full width */
-#job .form-section h2,
-#job .form-section div {
-  grid-column: 1 / -1;
-}
- 
-/* Label in the job section */
-#job .form-section > label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--purple-inkk);
-  align-self: center;
-}
- 
-/* ── #jobhelp hint box ── */
-#job-help {
-  background-color: var(--bg-card-alt);
-  border-left: 4px solid var(--mint);
-  border-radius: 0 5px 5px 0;
-  padding: 0.9rem 1.1rem;
-  font-size: 0.88rem;
-  color: var(--black-less);
-  line-height: var(--lineHeight);
-
-  justify-self: center !important;
-}
- 
-#job-help p {
-  font-weight: 600;
-  color: var(--purple-inkk);
-  margin-bottom: 0.5rem;
-}
- 
-#job-help ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  align-items: flex-start;
-}
- 
-#job-help ul li {
-  position: relative;
-  padding-left: 1.3rem;
-  font-size: 0.86rem;
-}
- 
-#job-help ul li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--purple-deeper);
-  font-weight: 800;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-#job .form-section {
-  /* Override flex to grid so label|input align in 2 columns */
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  column-gap: 1rem;
-  row-gap: 0.85rem;
-  align-items: start;
-}
- 
-/* h2 and div#jobhelp span full width */
-#job .form-section h2,
-#job .form-section div {
-  grid-column: 1 / -1;
-}
- 
-/* Label in the job section */
-#job .form-section > label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--purple-inkk);
-  align-self: center;
-}
- 
-/* ── #jobhelp hint box ── */
-#job-help {
-  background-color: var(--bg-card-alt);
-  border-left: 4px solid var(--mint);
-  border-radius: 0 5px 5px 0;
-  padding: 0.9rem 1.1rem;
-  font-size: 0.88rem;
-  color: var(--black-less);
-  line-height: var(--lineHeight);
-}
- 
-#job-help p {
-  font-weight: 600;
-  color: var(--purple-inkk);
-  margin-bottom: 0.5rem;
-}
- 
-#job-help ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
- 
-#job-help ul li {
-  position: relative;
-  padding-left: 1.3rem;
-  font-size: 0.86rem;
-}
- 
-#job-help ul li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--purple-deeper);
-  font-weight: 800;
-  font-size: 1rem;
-  line-height: 1.3;
 }
 
 #skills fieldset {
@@ -1243,13 +1119,14 @@ Job Application Page Styling
   margin-top: 0rem;
   margin-bottom: 0.3rem;
 }
-/* .form-section input[type="text"]:user-invalid */
+
 /* Show it ONLY when invalid */
-input:user-invalid + .error-text {
+input:user-invalid + .error-text, select:user-invalid + .error-text, .form-section fieldset fieldset:has(input[type="radio"]:user-invalid) .error-text {
     display: block;
     text-align: right;
 }
 
+/* specifically for jobref only */
 #jobref:user-invalid + .error-text {
     display: block;
     text-align: left;
@@ -1358,7 +1235,7 @@ Home Page Styling
               border-color 0.25s ease, transform 0.15s ease;
 }
  
-/* Primary — peach fill on dark bg */
+/* peach fill on dark bg */
 .job-btn, .aboutus-btn {
   background-color: var(--peach);
   color: var(--purple-inkk);
@@ -1443,6 +1320,7 @@ Home Page Styling
   margin-bottom: 2rem;
 }
  
+/* Description cards styling */
 .card {
   background-color: var(--bg-card);
   border-top: 5px solid var(--purple-dark);
@@ -1481,7 +1359,6 @@ Home Page Styling
 /* 
 The End of Home Page Styling
 */
-
 
 
 /* media query for jobs.html making aside responsive */
