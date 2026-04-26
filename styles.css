@@ -485,17 +485,17 @@ main > section:not(:first-child) {
 
 .contribution dd blockquote p:first-child {
   font-style: italic;
-  color: var(--purple-inkk);
   margin-bottom: 1.2rem;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  color: var(--black);
 }
 
 .contribution dd blockquote p:nth-child(2) {
-  color: var(--black);
   margin-bottom: 0.5rem;
   display: flex;
   justify-content: center;
+  color: var(--purple-extreme);
 }
 
 .contribution dd blockquote cite {
@@ -787,6 +787,23 @@ Job Application Page Styling
   letter-spacing: 0.08em;
 }
 
+/* call-to-action jump link button styling */
+.cta-btn {
+    background-color: var(--purple-extreme);
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--white-less);
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: var(--peach);
+    color: var(--purple-extreme);
+    font-weight: bold;
+}
+
 /* form container */
 #application-form {
   max-width: 1100px;
@@ -856,11 +873,6 @@ Job Application Page Styling
   align-items: center;
   width: 100%;
   gap: 1.5rem;
-}
-
-#job-help p {
-  font-weight: bold;
-  color: var(--purple-dark);
 }
  
 #job-help ul {
